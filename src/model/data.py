@@ -1,6 +1,8 @@
 from src.model.connect import cur, conn
 
-def mess(type: str):
+
+def mess(type: str) -> str:
+
     'Берем сообщение из БД'
     query = f"SELECT text FROM data WHERE type = '{type}'"
     try:

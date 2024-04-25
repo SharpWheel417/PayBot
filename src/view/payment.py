@@ -1,6 +1,9 @@
 from telegram import Bot, Update, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, CallbackQueryHandler, CallbackContext
 
+### STEP 2 ###
+
+
 ### Комманда Старт ###
 async def payment(update: Update, context: ContextTypes.DEFAULT_TYPE):
     global user_course_rub, user_course_THB

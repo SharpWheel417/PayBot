@@ -7,7 +7,7 @@ cur = None
 conn = psycopg2.connect(
 host="localhost",
 port=5432,
-database="tg",
+database="paybot",
 user="admin",
 password="admin")
 

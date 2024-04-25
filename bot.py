@@ -1,8 +1,10 @@
 from telegram import Bot, Update, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, CallbackQueryHandler, CallbackContext
 
-from src.view.start import start;
-from src.view.payment import payment;
+from src.view.sum import sum
+from src.view.message import handle_message
+from src.view.payment import payment
+from src.view.start import start
 
 BOT_TOKEN = "5921193873:AAFtVwAzegmN6G9USoetSEVV7NoSW-BFJRM"
 
@@ -33,8 +35,8 @@ if __name__ == '__main__':
     start_handler = CommandHandler('start', start)
     application.add_handler(start_handler)
 
-    # message_handler = MessageHandler(filters.TEXT, handle_message)
-    # application.add_handler(message_handler)
+    message_handler = MessageHandler(filters.TEXT, handle_message)
+    application.add_handler(message_handler)
 
 
     application.run_polling()

@@ -13,9 +13,7 @@ async def payment(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.effective_user.last_name is None:
         user_fio = update.effective_user.first_name
     else:
-        user_fio = update.effective_user.first_name + " " + update.effective_user.last_name
-
-    # db.add_new_user(user_id, username, user_fio)
+        user_fio = update.effective_user.first_name + " " + update.effective_user.last_name    
 
     # s.set_state(user_id, '0')
     # db.set_bats(user_id, '0')

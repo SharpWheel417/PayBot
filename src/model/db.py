@@ -1,4 +1,4 @@
-from model.connect import cur, conn
+from src.model.connect import cur, conn
 
 def add_new_user(chat_id, name, first_name) -> None:
     'Добавляем пользователя в бд нового пользователя'
@@ -17,9 +17,9 @@ def add_new_user(chat_id, name, first_name) -> None:
             print("Пользователь с таким chat_id уже существует")
         else:
             # Вставляем пользователя, если он не существует
-            print("Новый пользователь добавлен")
-            cur.execute("INSERT INTO users (name, chat_id) VALUES (%s, '%s')", (name, chat_id))
+            cur.execute("INSERT INTO users (username, chat_id, full_name) VALUES (%s, '%s', %s)", (name, chat_id, first_name))
             conn.commit()  # Не забудьте подтвердить транзакцию, если требуется
+            print("Новый пользователь добавлен")
     except Exception as e:
         conn.rollback()
         print("Error:", e)

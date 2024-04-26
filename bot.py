@@ -1,15 +1,11 @@
 from telegram import Bot, Update, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, CallbackQueryHandler, CallbackContext
 
-
+from config import BOT_TOKEN
 from src.view.sum import sum
-from src.view.message import handle_message
+from src.view.handle.message import handle_message
 from src.view.payment import payment
 from src.view.start import start
-
-
-BOT_TOKEN = "5921193873:AAFtVwAzegmN6G9USoetSEVV7NoSW-BFJRM"
-ADMIN = [""]
 
 
 async def button_callback(update: Update, context: CallbackContext, *args, **kwargs):
@@ -35,7 +31,7 @@ if __name__ == '__main__':
 
     application.add_handler(CallbackQueryHandler(button_callback))
 
-    start_handler = CommandHandler('start', start.start)
+    start_handler = CommandHandler('start', start)
     application.add_handler(start_handler)
 
     message_handler = MessageHandler(filters.TEXT, handle_message)

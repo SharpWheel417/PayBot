@@ -1,8 +1,9 @@
 from telegram import Bot, Update, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, CallbackQueryHandler, CallbackContext
 
-### STEP 2 ###
+from src.styles.buttons import dollar, euro
 
+### STEP 2 ###
 
 ### Комманда Старт ###
 async def payment(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -26,8 +27,6 @@ async def payment(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ### Юзер ###
     # else:
         
-        dollar = InlineKeyboardButton('Сревис принимает оплату в  $', callback_data="dollar")
-        euro = InlineKeyboardButton('Сревис принимает оплату в €', callback_data="euro")
 
         keyboard = InlineKeyboardMarkup([[dollar], [euro]])
 

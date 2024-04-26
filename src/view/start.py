@@ -3,6 +3,9 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, Messa
 
 from config import ADMIN
 from src.model.data import mess
+
+from src.styles.buttons import buy_button
+
 import src.model.user as user
 
 ### Комманда Старт ###
@@ -25,8 +28,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         ### Добавляем юзера в базу данных ###
         user.add_new_user(user_id, username, user_fio)
-        
-        buy_button = InlineKeyboardButton('Оплатить покупку', callback_data="payment")
 
         keyboard = InlineKeyboardMarkup([[buy_button]])
 

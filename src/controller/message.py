@@ -16,30 +16,16 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if re.search(patternDollar, text):
         print("Строка заканчивается на доллар")
         summ = int(text.replace("$", ""))
-        #Функция создания заказа
         type="dollar"
+        result = summ * 1.1
+        if dbOrder(result, type, update.effective_user.username, update.effective_chat.id, "query"):
+            await order(result, update, context)
     else:
         if re.search(patternEuro, text):
             print("Строка заканчивается на евро")
             summ = int(text.replace("€", ""))
-            ##функция создания заказа
             type="euro"
-        else:
-            
-
-
-    result = summ * 1.1
-    dbOrder(result, type, update.effective_user.username, update.effective_chat.id, "query")
-
-    
-
-    yes = InlineKeyboardButton('Да', callback_data="yes")
-    no = InlineKeyboardButton('Нет', callback_data="no")
-
-    keyboard = InlineKeyboardMarkup([[yes], [no]])
-
-    # txt = "К оплате:"+ str(result)+"₽ с учетом комисси банка и бота. Если совершить оплату сервиса/услуги не удастся, мы совершим возврат средств в полном обьеме. Продолжить?"
-
-    txt = mess("to_pay").format(summ=result)
-
-    await context.bot.send_message(chat_id=update.effective_chat.id, text=txt ,reply_markup=keyboard)
+            result = summ * 1.1
+            if dbOrder(result, type, update.effective_user.username, update.effective_chat.id, "query"):
+                await order(result, update, context)
+        

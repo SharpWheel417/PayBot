@@ -7,10 +7,11 @@ from src.model.data import mess
 ### STEP 2 ###
 
 ### Комманда Старт ###
-async def payment(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def currency_type(update: Update, context: ContextTypes.DEFAULT_TYPE, type):
 
-    txt = mess("info")
+    if type == "dollar":
+      txt = mess("dollar")
+    if type == "euro":
+      txt = mess("euro")
 
-    keyboard = InlineKeyboardMarkup([[dollar], [euro]])
-
-    await context.bot.send_message(chat_id=update.effective_chat.id, text=txt,reply_markup=keyboard)
+    await context.bot.send_message(chat_id=update.effective_chat.id, text=txt)

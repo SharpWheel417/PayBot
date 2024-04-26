@@ -17,9 +17,21 @@ def add_new_user(chat_id, name, first_name) -> None:
             print("Пользователь с таким chat_id уже существует")
         else:
             # Вставляем пользователя, если он не существует
-            cur.execute("INSERT INTO users (username, chat_id, full_name) VALUES (%s, '%s', %s)", (name, chat_id, first_name))
+            cur.execute("INSERT INTO users (id, username, chat_id, full_name) VALUES (%s, %s, '%s', %s)", (max_id()+1, name, chat_id, first_name))
             conn.commit()  # Не забудьте подтвердить транзакцию, если требуется
             print("Новый пользователь добавлен")
+    except Exception as e:
+        conn.rollback()
+        print("Error:", e)
+
+
+def max_id():
+    'Получаем максимальное id заказа'
+    query = "SELECT MAX(id) FROM users"
+    try:
+        cur.execute(query)
+        max_id = cur.fetchone()[0]
+        return max_id
     except Exception as e:
         conn.rollback()
         print("Error:", e)

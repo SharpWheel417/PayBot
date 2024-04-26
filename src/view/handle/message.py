@@ -3,23 +3,35 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, Messa
 import re
 
 from src.model.data import mess
+from src.view.order import order
+from src.model.order import order as dbOrder
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
-    print(text)
+
 
     patternDollar = r"\$"
     patternEuro = r"\€"
-
+    type=""
     if re.search(patternDollar, text):
         print("Строка заканчивается на доллар")
         summ = int(text.replace("$", ""))
+        #Функция создания заказа
+        type="dollar"
     else:
         if re.search(patternEuro, text):
             print("Строка заканчивается на евро")
             summ = int(text.replace("€", ""))
+            ##функция создания заказа
+            type="euro"
+        else:
+            
+
 
     result = summ * 1.1
+    dbOrder(result, type, update.effective_user.username, update.effective_chat.id, "query")
+
+    
 
     yes = InlineKeyboardButton('Да', callback_data="yes")
     no = InlineKeyboardButton('Нет', callback_data="no")

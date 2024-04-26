@@ -1,9 +1,9 @@
 from telegram import Bot, Update, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, CallbackQueryHandler, CallbackContext
 
-from bot import ADMIN
+from config import ADMIN
 from src.model.data import mess
-import src.model.db as db
+import src.model.user as user
 
 ### Комманда Старт ###
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -24,7 +24,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
 
         ### Добавляем юзера в базу данных ###
-        db.add_new_user(user_id, username, user_fio)
+        user.add_new_user(user_id, username, user_fio)
         
         buy_button = InlineKeyboardButton('Оплатить покупку', callback_data="payment")
 

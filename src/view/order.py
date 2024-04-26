@@ -3,11 +3,9 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, Messa
 import re
 
 from src.model.data import mess
+from src.styles.buttons import yes, no
 
 async def order(summ, update: Update, context: ContextTypes.DEFAULT_TYPE):
-    
-    yes = InlineKeyboardButton('Да', callback_data="yes")
-    no = InlineKeyboardButton('Нет', callback_data="no")
 
     keyboard = InlineKeyboardMarkup([[yes], [no]])
     

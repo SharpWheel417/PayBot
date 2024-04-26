@@ -24,22 +24,26 @@ INSERT INTO "data" ("id", "type", "text") VALUES
 
 Продолжить?');
 
-DROP TABLE IF EXISTS "order";
+DROP TABLE IF EXISTS "orders";
 DROP SEQUENCE IF EXISTS order_id_seq;
 CREATE SEQUENCE order_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
 
-CREATE TABLE "public"."order" (
+CREATE TABLE "public"."orders" (
     "id" integer DEFAULT nextval('order_id_seq') NOT NULL,
-    "user_id" integer NOT NULL,
+    "username" text NOT NULL,
     "money_type" text NOT NULL,
     "sum" text NOT NULL,
     "email" text,
     "link" text,
     "date_order" date NOT NULL,
     "state" text NOT NULL,
+    "chat_id" text NOT NULL,
+    "order_code" text NOT NULL,
     CONSTRAINT "order_pkey" PRIMARY KEY ("id")
 ) WITH (oids = false);
 
+INSERT INTO "orders" ("id", "username", "money_type", "sum", "email", "link", "date_order", "state", "chat_id", "order_code") VALUES
+(4,	'Summer_Death',	'dollar',	'22.0',	NULL,	NULL,	'2024-04-26',	'query',	'1194700554',	'0a4a46b2-de55-4496-aad3-f4095664ab91');
 
 DROP TABLE IF EXISTS "users";
 DROP SEQUENCE IF EXISTS users_id_seq;
@@ -57,4 +61,4 @@ CREATE TABLE "public"."users" (
 INSERT INTO "users" ("id", "username", "chat_id", "state", "full_name") VALUES
 (3,	'Summer_Death',	'1194700554',	NULL,	'Gleb Petrov');
 
--- 2024-04-25 11:35:48.331592+00
+-- 2024-04-26 10:50:15.201183+00

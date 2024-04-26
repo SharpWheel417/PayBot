@@ -13,3 +13,7 @@ yes = InlineKeyboardButton('Да', callback_data="yes")
 
 #Кнопка "Нет"
 no = InlineKeyboardButton('Нет', callback_data="no")
+
+apply_order = InlineKeyboardButton('Взять в работу', callback_data="apply_order")
+
+cancle_order = InlineKeyboardButton('Отменить заказ', callback_data="cancle_order")

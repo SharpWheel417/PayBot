@@ -3,7 +3,7 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, Messa
 import re
 
 from src.model.data import mess
-from src.model.order import yes_order, get_order_code, get_order_sum
+from src.model.order import recipt_order, get_order_code, get_order_sum, order
 from src.model.variables import v
 from src.styles.buttons import apply_order, cancle_order
 
@@ -11,8 +11,8 @@ from config import ADMIN
 
 async def yes(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-    #State заказа переводится в yes
-    yes_order(update.effective_user.username)
+    #State заказа переводится в recipt (квитанция)
+    recipt_order(update.effective_user.username)
 
     ids = get_order_code(update.effective_user.username)
     sum = get_order_sum(update.effective_user.username)

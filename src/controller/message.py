@@ -4,7 +4,7 @@ import re
 
 from src.model.data import mess
 from src.view.order import order
-from src.model.order import order as dbOrder
+from src.model.order import set_order as dbOrder
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
@@ -28,4 +28,3 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             result = summ * 1.1
             if dbOrder(result, type, update.effective_user.username, update.effective_chat.id, "query"):
                 await order(result, update, context)
-        

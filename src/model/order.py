@@ -20,16 +20,21 @@ class Order:
             print("Error:", e)
             return "Error"
 
+    # def check_order(self, username):
+
+
 # o = Order()
 
 
 
-def set_order(summ: int, type: str, userId: int, chatId: int, state: str) -> bool:
+def set_order(summ: int, userId: int, chatId: int, state: str) -> bool:
     'Заносим заказ в БД'
+
+
 
     current_date = datetime.datetime.now()
     orderCode = str(uuid.uuid4())
-    query = f"INSERT INTO orders (id, order_code, username, chat_id, money_type, sum, date_order, state) VALUES ({max_id()+1}, '{orderCode}','{userId}', '{chatId}', '{type}', {summ}, '{current_date}', '{state}' )"
+    query = f"INSERT INTO orders (id, order_code, username, chat_id, sum, date_order, state) VALUES ({max_id()+1}, '{orderCode}','{userId}', '{chatId}', {summ}, '{current_date}', '{state}' )"
     print(query)
     try:
         # Вставьте текущую дату в таблицу "order"

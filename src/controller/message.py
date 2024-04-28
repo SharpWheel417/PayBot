@@ -8,23 +8,7 @@ from src.model.order import set_order as dbOrder
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
-
-
-    patternDollar = r"\$"
-    patternEuro = r"\€"
-    type=""
-    if re.search(patternDollar, text):
-        print("Строка заканчивается на доллар")
-        summ = int(text.replace("$", ""))
-        type="dollar"
-        result = summ * 1.1
-        if dbOrder(result, type, update.effective_user.username, update.effective_chat.id, "query"):
-            await order(result, update, context)
-    else:
-        if re.search(patternEuro, text):
-            print("Строка заканчивается на евро")
-            summ = int(text.replace("€", ""))
-            type="euro"
-            result = summ * 1.1
-            if dbOrder(result, type, update.effective_user.username, update.effective_chat.id, "query"):
-                await order(result, update, context)
+    summ = int(text)
+    result = summ * 1.1
+    if dbOrder(result, update.effective_user.username, update.effective_chat.id, "query"):
+        await order(result, update, context)

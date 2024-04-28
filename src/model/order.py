@@ -9,7 +9,6 @@ class Order:
 
     def get_state(self, username):
         query = f"SELECT state FROM orders WHERE username = '{username}'"
-        print(query)
         try:
             # Вставьте текущую дату в таблицу "order"
             cur.execute(query)
@@ -20,37 +19,67 @@ class Order:
             print("Error:", e)
             return "Error"
 
-    # def check_order(self, username):
+    def check_order(self, username) -> bool:
+        '''
+            Проверка, существует ли незавершенный заказ у пользователя
+        '''
+        query = f"SELECT EXISTS(SELECT 1 FROM orders WHERE username = '{username}')"
+        try:
+            cur.execute(query)
+            result = cur.fetchall()
+            return result
+        except Exception as e:
+            conn.rollback()
+            print("Error:", e)
+            return "Error"
+
+    def get_active_order(self, username):
+        query = f"SELECT ids, date FROM orders WHERE username = '{username}' AND state != 'cancel'"
+        try:
+            cur.execute(query)
+            result = cur.fetchall()
+            o = {
+                'ids': result[0][0],
+                'date': result[0][1],
+                }
+            return o
+        except Exception as e:
+            conn.rollback()
+            print("Error:", e)
+            return "Error"
 
 
-# o = Order()
+
+order = Order()
 
 
 
-def set_order(summ: int, userId: int, chatId: int, state: str) -> bool:
+def set_order(summ: int, user: int, chatId: int, state: str) -> bool:
     'Заносим заказ в БД'
 
+    #Проверка на существование заказа
+    if not order.check_order(user):
 
-
-    current_date = datetime.datetime.now()
-    orderCode = str(uuid.uuid4())
-    query = f"INSERT INTO orders (id, order_code, username, chat_id, sum, date_order, state) VALUES ({max_id()+1}, '{orderCode}','{userId}', '{chatId}', {summ}, '{current_date}', '{state}' )"
-    print(query)
-    try:
+        current_date = datetime.datetime.now()
+        ids = str(uuid.uuid4())
+        query = f"INSERT INTO orders (id, ids, username, chat_id, sum, date, state) VALUES ({max_id()+1}, '{ids}','{user}', '{chatId}', {summ}, '{current_date}', '{state}' )"
+        print(query)
+        try:
         # Вставьте текущую дату в таблицу "order"
-        cur.execute(query)
-        conn.commit()  # Не забудьте подтвердить транзакцию, если требуется
-        print("Заказ создан")
-        return True
-    except Exception as e:
-        conn.rollback()
-        print("Error:", e)
-        return False
+            cur.execute(query)
+            conn.commit()  # Не забудьте подтвердить транзакцию, если требуется
+            print("Заказ создан")
+            return True
+        except Exception as e:
+            conn.rollback()
+            print("Error:", e)
+            return False
+    return False
 
-def get_order_code( username: str) -> str:
+def get_order_ids( username: str) -> str:
     'Берем заказ из БД'
 
-    query = f"SELECT order_code FROM orders WHERE username = '{username}'"
+    query = f"SELECT ids FROM orders WHERE username = '{username}'"
     print(query)
     try:
         # Вставьте текущую дату в таблицу "order"

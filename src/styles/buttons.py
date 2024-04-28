@@ -17,3 +17,9 @@ no = InlineKeyboardButton('Нет', callback_data="no")
 apply_order = InlineKeyboardButton('Взять в работу', callback_data="apply_order")
 
 cancle_order = InlineKeyboardButton('Отменить заказ', callback_data="cancle_order")
+
+def admin_buttons():
+    return ReplyKeyboardMarkup(
+            [['Изменить курс', 'Заказы'], ['Узнать курс', 'Узнать маржу', 'Статистика'], ['Калькулятор'],['Остановить переписку с юзером']],
+            resize_keyboard=True
+        )

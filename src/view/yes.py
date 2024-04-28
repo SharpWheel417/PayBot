@@ -3,7 +3,7 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, Messa
 import re
 
 from src.model.data import mess
-from src.model.order import recipt_order, get_order_code, get_order_sum, order
+from src.model.order import recipt_order, get_order_code, get_order_sum
 from src.model.variables import v
 from src.styles.buttons import apply_order, cancle_order
 

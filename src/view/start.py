@@ -1,10 +1,11 @@
 from telegram import Bot, Update, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, CallbackQueryHandler, CallbackContext
 
+# from config import ADMIN
 from config import ADMIN
 from src.model.data import mess
 
-from src.styles.buttons import buy_button
+from src.styles.buttons import buy_button, admin_buttons
 
 import src.model.user as user
 
@@ -21,7 +22,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ### Админ ###
     if user_id in ADMIN:
         #admin panel
-        await context.bot.send_message(chat_id=update.effective_chat.id, text="Привет админ!")
+        await context.bot.send_message(chat_id=update.effective_chat.id, text="Привет админ!", reply_markup=admin_buttons())
 
     ### Юзер ###
     else:
@@ -36,4 +37,3 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await context.bot.send_message(chat_id=update.effective_chat.id, text=mess("start_two"), reply_markup=keyboard)
 
         # await context.bot.send_message(chat_id=update.effective_chat.id, text=get_message.get_mess('hello_message', False), reply_markup=keyboards.get_user_base())
-

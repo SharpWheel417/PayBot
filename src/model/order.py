@@ -27,7 +27,8 @@ class Order:
         try:
             cur.execute(query)
             result = cur.fetchall()
-            return result
+            print(result[0][0])
+            return result[0][0]
         except Exception as e:
             conn.rollback()
             print("Error:", e)
@@ -57,24 +58,21 @@ order = Order()
 def set_order(summ: int, user: int, chatId: int, state: str) -> bool:
     'Заносим заказ в БД'
 
-    #Проверка на существование заказа
-    if not order.check_order(user):
 
-        current_date = datetime.datetime.now()
-        ids = str(uuid.uuid4())
-        query = f"INSERT INTO orders (id, ids, username, chat_id, sum, date, state) VALUES ({max_id()+1}, '{ids}','{user}', '{chatId}', {summ}, '{current_date}', '{state}' )"
-        print(query)
-        try:
-        # Вставьте текущую дату в таблицу "order"
-            cur.execute(query)
-            conn.commit()  # Не забудьте подтвердить транзакцию, если требуется
-            print("Заказ создан")
-            return True
-        except Exception as e:
-            conn.rollback()
-            print("Error:", e)
-            return False
-    return False
+    current_date = datetime.datetime.now()
+    ids = str(uuid.uuid4())
+    query = f"INSERT INTO orders (id, ids, username, chat_id, sum, date, state) VALUES ({max_id()+1}, '{ids}','{user}', '{chatId}', {summ}, '{current_date}', '{state}' )"
+    print(query)
+    try:
+    # Вставьте текущую дату в таблицу "order"
+        cur.execute(query)
+        conn.commit()  # Не забудьте подтвердить транзакцию, если требуется
+        print("Заказ создан")
+        return True
+    except Exception as e:
+        conn.rollback()
+        print("Error:", e)
+        return False
 
 def get_order_ids( username: str) -> str:
     'Берем заказ из БД'

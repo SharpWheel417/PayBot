@@ -7,7 +7,7 @@ class Order:
     def __init__(self) -> None:
         pass
 
-    def get_state(username):
+    def get_state(self, username):
         query = f"SELECT state FROM orders WHERE username = '{username}'"
         print(query)
         try:
@@ -20,7 +20,7 @@ class Order:
             print("Error:", e)
             return "Error"
 
-order = Order
+# o = Order()
 
 
 

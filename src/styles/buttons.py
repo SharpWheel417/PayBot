@@ -5,9 +5,6 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, Messa
 #Кнопка "Оплатить покупку"
 buy_button = InlineKeyboardButton('Оплатить покупку', callback_data="payment")
 
-dollar = InlineKeyboardButton('Сревис принимает оплату в  $', callback_data="dollar")
-euro = InlineKeyboardButton('Сревис принимает оплату в €', callback_data="euro")
-
 #Кнопка "Да"
 yes = InlineKeyboardButton('Да', callback_data="yes")
 

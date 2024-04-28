@@ -4,7 +4,6 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, Messa
 from src.view.payment import payment
 from src.view.no import no
 from src.view.yes import yes
-from src.view.currency_type import currency_type
 from src.view.admin.order import apply_order, cancle_order
 
 async def button_callback(update: Update, context: CallbackContext, *args, **kwargs):
@@ -15,14 +14,6 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
     ##Оплатить покупку или услугу в интернете
     if callback_data == "payment":
         await payment(update, context)
-
-    ##Пользователь выбирает оплату доллорами
-    if callback_data == "dollar":
-        await currency_type(update, context, callback_data)
-
-    ##Пользователь выбирает оплату в евро
-    if callback_data == "euro":
-        await currency_type(update, context, callback_data)
 
     ##Если пользователь соглашается с заказом и ценой
     if callback_data == "yes":

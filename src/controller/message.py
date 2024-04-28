@@ -12,7 +12,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
     summ = int(text)
     result = summ * 1.1
-    if not order.check_order:
+    check = order.check_order(update.effective_user.username)
+    if not check:
         if dbOrder(result, update.effective_user.username, update.effective_chat.id, "query"):
             await vOrder(result, update, context)
 

@@ -4,8 +4,10 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, Messa
 from config import BOT_TOKEN, ADMIN
 from src.controller.button import button_callback
 from src.controller.message import handle_message
+from src.controller.document import handle_document
 # from src.controller.photo import handle_photo
 from src.view.start import start
+
 
 if __name__ == '__main__':
     application = ApplicationBuilder().token(BOT_TOKEN).build()
@@ -14,6 +16,9 @@ if __name__ == '__main__':
 
     start_handler = CommandHandler('start', start)
     application.add_handler(start_handler)
+
+    document_handler = MessageHandler(filters.Document.PDF, handle_document)
+    application.add_handler(document_handler)
 
     # photo_handler = MessageHandler(filters.PHOTO, handle_photo)
     # application.add_handler(photo_handler)

@@ -1,11 +1,14 @@
 from telegram import Bot, Update, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, CallbackQueryHandler, CallbackContext
 
+import re
+
 from src.view.payment import payment
-from src.view.no import no
-from src.view.yes import yes
+from src.view.comfrim_sum import no, yes
 from src.view.admin.order import apply_order, cancle_order
-from src.view.recipt import u_a_apply_recipt
+from src.model.order import close_order, recipt_order, get_order_ids, get_order_sum
+from src.view.recipt import u_a_apply_recipt, u_a_cancle_recipt
+from src.view.order import complete_order, error_order
 
 from src.model.order import order as o
 from src.model.user import user as u
@@ -21,19 +24,29 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
 
     ##Если пользователь соглашается с заказом и ценой
     if callback_data == "yes":
-        await yes(update, context)
+            #State заказа переводится в recipt (квитанция)
+        recipt_order(update.effective_user.username)
+
+        ids = get_order_ids(update.effective_user.username)
+        sum = get_order_sum(update.effective_user.username)
+        await yes(ids, sum, update, context)
 
     #Если ппользователь оттказывается от заказа
     if callback_data == "no":
+        close_order(update.effective_chat.id)
         await no(update, context)
 
 
     #Админ принимает заказ
     if callback_data == "apply_order":
+        # Удалить кнопки после обработки
+        await remove_buttons(update, context)
         await apply_order(update, context)
 
     #Админ отказывается от заказа
     if callback_data == "cancle_order":
+        # Удалить кнопки после обработки
+        await remove_buttons(update, context)
         await cancle_order(update, context)
         
     
@@ -44,16 +57,94 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
         ## IDS заказа   
         ids = file_name.split(".pdf")[0]
         ## Обновляем state в БД
-        if o.state_order("apply_recipt", ids):
+        if o.state("apply_recipt", ids):
             chat_id = o.chat_id(ids)
             
-            u.state('email&url', '', chat_id)
+            u.state('email&url', chat_id)
+            # Удалить кнопки после обработки
+            await remove_buttons(update, context)
             
             await u_a_apply_recipt(chat_id, update, context)
             
+        ##Отмена квитанции
+    if callback_data == "cancle_recipt":
+        ##Название файла
+        file_name = query.message.document.file_name
+        ## IDS заказа   
+        ids = file_name.split(".pdf")[0]
+        if o.state('cancle_recipt', ids):
+            chat_id = o.chat_id(ids)
+            u.state('cancle_recipt', chat_id)
+            await u_a_cancle_recipt(chat_id, update, context)
+            # Удалить кнопки после обработки
+            await remove_buttons(update, context)
+            
+            
+    pattern = r"ID заказа: \b[A-Fa-f0-9-]+\b"
+    
+    ## Заказ выполнен
+    if callback_data == "complete_order":
+        
+        ##Находим ids заказа в сообщении
+        text = query.message.text
+        ids = re.search(pattern, text).group()
+        ids = ids.replace("ID заказа: ", "")
+        
+        #Получаем chat_id заказчика
+        chat_id = o.chat_id(ids)
+        
+        # Меняем статусы заказа на complete
+        u.state('order_complete', chat_id)
+        o.state('order_complete', ids)
+        o.status('complete', ids)
+        
+        # Отправляем сообщение пользователю о завершенном заказе
+        await complete_order(chat_id, update, context)
+        
+        # Удалить кнопки после обработки
+        await remove_buttons(update, context)
+        
+        
+    if callback_data == "error_order":
+        
+        ##Находим ids заказа в сообщении
+        text = query.message.text
+        ids = re.search(pattern, text).group()
+        ids = ids.replace("ID заказа: ", "")
+        
+        #Получаем chat_id заказчика
+        chat_id = o.chat_id(ids)
+        
+         # Меняем статусы заказа на complete
+        u.state('order_cancle', chat_id)
+        o.state('order_cancle', ids)
+        o.status('cancle', ids)
+        
+        # Отправляем сообщение пользователю о завершенном заказе
+        await error_order(chat_id, update, context)
+        
+        # Удалить кнопки после обработки
+        await remove_buttons(update, context)
+        
     
             
-            
+
         
-    if callback_data == "cancle_recipt":
-        print("Отмена заказа")
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+# Удаление кнопок из сообщения
+# Удаление кнопок из сообщения
+async def remove_buttons(update, context):
+    await context.bot.edit_message_reply_markup(chat_id=update.effective_chat.id, 
+                                                message_id=update.effective_message.message_id, 
+                                                reply_markup=InlineKeyboardMarkup([]))

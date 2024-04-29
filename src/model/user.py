@@ -17,15 +17,12 @@ class User():
             conn.rollback()
             print("Ошибка получения state юзера:", e)
             
-    def state(self, state: str, username: str, chat_id: str) -> bool:
+    def state(self, state: str, chat_id: str) -> bool:
         '''
             Обновляем state пользователя
             Если поставить пустой username, то обновляем state по chat_id
         '''
-        if username == '':
-            query = f"UPDATE users SET state = '{state}' WHERE chat_id = '{chat_id}'"
-        else:    
-            query = f"UPDATE users SET state = '{state}' WHERE username = '{username}'"
+        query = f"UPDATE users SET state = '{state}' WHERE chat_id = '{chat_id}'"   
         print(query)
         try:
             cur.execute(query)

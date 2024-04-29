@@ -15,6 +15,7 @@ apply_order = InlineKeyboardButton('Взять в работу', callback_data="
 
 cancle_order = InlineKeyboardButton('Отменить заказ', callback_data="cancle_order")
 
+admin_first = InlineKeyboardMarkup([[apply_order], [cancle_order]])
 
 #Когда бот присылает админу квитанцию
 apply_recipt = InlineKeyboardButton('Принять квитанцию', callback_data="apply_recipt")

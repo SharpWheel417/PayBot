@@ -40,11 +40,11 @@ class Order:
             print("Error:", e)
             return "Error"
 
-    def check(self, username) -> bool:
+    def check(self, chat_id) -> bool:
         '''
             Проверка, существует ли незавершенный заказ у пользователя
         '''
-        query = f"SELECT EXISTS(SELECT 1 FROM orders WHERE username = '{username}')"
+        query = f"SELECT EXISTS(SELECT 1 FROM orders WHERE chat_id = '{chat_id}' AND status = 'active')"
         try:
             cur.execute(query)
             result = cur.fetchall()
@@ -75,6 +75,20 @@ class Order:
     def state(self, state: str, ids: str) -> bool:
         'Обновляем state заказа'
         query = f"UPDATE orders SET state = '{state}' WHERE ids = '{ids}'"
+        print(query)
+        try:
+            cur.execute(query)
+            conn.commit()
+            print("Квитанция принята")
+            return True
+        except Exception as e:
+            conn.rollback()
+            print("Error:", e)
+            return False
+        
+    def status(self, status: str, ids: str) -> bool:
+        'Обновляем state заказа'
+        query = f"UPDATE orders SET status = '{status}' WHERE ids = '{ids}'"
         print(query)
         try:
             cur.execute(query)

@@ -1,7 +1,5 @@
 -- Adminer 4.8.1 PostgreSQL 16.1 (Debian 16.1-1.pgdg120+1) dump
 
-\connect "paybot";
-
 DROP TABLE IF EXISTS "data";
 DROP SEQUENCE IF EXISTS data_id_seq;
 CREATE SEQUENCE data_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;

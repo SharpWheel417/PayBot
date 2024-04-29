@@ -15,6 +15,18 @@ apply_order = InlineKeyboardButton('Взять в работу', callback_data="
 
 cancle_order = InlineKeyboardButton('Отменить заказ', callback_data="cancle_order")
 
+
+#Когда бот присылает админу квитанцию
+apply_recipt = InlineKeyboardButton('Принять квитанцию', callback_data="apply_recipt")
+cancle_recipt = InlineKeyboardButton('Отменить квитанцию', callback_data="cancle_recipt")
+admin_recipt = InlineKeyboardMarkup([[apply_recipt], [cancle_recipt]])
+
+
+complete_order = InlineKeyboardButton('Заказ выполнен', callback_data="complete_order")
+error_order = InlineKeyboardButton('Не получилось выполнить заказ', callback_data="error_order")
+admin_order = InlineKeyboardMarkup([[complete_order], [error_order]])
+
+
 def admin_buttons():
     return ReplyKeyboardMarkup(
             [['Изменить курс', 'Заказы'], ['Узнать курс', 'Узнать маржу', 'Статистика'], ['Калькулятор'],['Остановить переписку с юзером']],

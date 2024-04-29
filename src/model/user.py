@@ -1,5 +1,46 @@
 from src.model.connect import cur, conn
 
+class User():
+
+    def __init__(self):
+        pass
+    
+    def get_state(self, chat_id):
+        'Получаем state пользователя'
+        query = f"SELECT state FROM users WHERE chat_id = '{chat_id}'"
+        print(query)
+        try:
+            cur.execute(query)
+            result = cur.fetchall()
+            return result[0][0]
+        except Exception as e:
+            conn.rollback()
+            print("Ошибка получения state юзера:", e)
+            
+    def state(self, state: str, username: str, chat_id: str) -> bool:
+        '''
+            Обновляем state пользователя
+            Если поставить пустой username, то обновляем state по chat_id
+        '''
+        if username == '':
+            query = f"UPDATE users SET state = '{state}' WHERE chat_id = '{chat_id}'"
+        else:    
+            query = f"UPDATE users SET state = '{state}' WHERE username = '{username}'"
+        print(query)
+        try:
+            cur.execute(query)
+            conn.commit()
+            print(" State usera обновлен")
+            return True
+        except Exception as e:
+            conn.rollback()
+            print("Ошибка обновления стейта юзера:", e)
+            return False
+        
+        
+user = User()
+        
+
 def add_new_user(chat_id, name, first_name) -> None:
     'Добавляем пользователя в бд нового пользователя'
     # Проверяем, существует ли пользователь с указанным chat_id

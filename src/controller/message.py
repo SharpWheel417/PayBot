@@ -30,6 +30,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if email and url:
             if order.email_url(email, url, update.effective_chat.id):
                 await aEmail(email, url, update, context)
+                u.state("await_completed", update.message.chat_id)
                 await came_email(update, context)
     
     ########################
@@ -41,13 +42,13 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         summ = int(text)
         result = summ * 1.1
-        check = order.check_order(update.effective_user.username)
+        check = order.check(update.effective_user.username)
         if not check:
-            if order.set_order(result, update.effective_user.username, update.effective_chat.id, "query"):
+            if order.set(result, update.effective_user.username, update.effective_chat.id, "query"):
                 await vOrder(result, update, context)
 
         else:
-            o = order.get_active_order(update.message.chat_id)
+            o = order.get_active(update.message.chat_id)
             await have_order(o, update, context)
             
     ######################

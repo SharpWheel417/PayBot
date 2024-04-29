@@ -15,7 +15,7 @@ async def handle_document(update: Update, context: CallbackContext):
     # Получить имя файла
     file_name = file.file_name
 
-    order = o.get_active_order(update.message.chat_id)
+    order = o.get_active(update.message.chat_id)
 
     new_file_path = os.path.join("static/recipt", order['ids'] + ".pdf")
 

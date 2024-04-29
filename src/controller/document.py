@@ -2,6 +2,9 @@ from telegram import Update
 from telegram.ext import CallbackContext
 import os
 
+from src.view.admin.recipt import recipt as aRecipt
+from src.view.recipt import recipt as uSendRecipt
+
 from src.model.order import order as o
 from config import ADMIN
 
@@ -12,7 +15,7 @@ async def handle_document(update: Update, context: CallbackContext):
     # Получить имя файла
     file_name = file.file_name
 
-    order = o.get_active_order(update.effective_user.username)
+    order = o.get_active_order(update.message.chat_id)
 
     new_file_path = os.path.join("static/recipt", order['ids'] + ".pdf")
 
@@ -24,13 +27,10 @@ async def handle_document(update: Update, context: CallbackContext):
         new_file_content = await file_obj.download_as_bytearray()
         new_file.write(new_file_content)
 
-    # Отправить сообщение о том, что файл был получен
-    update.message.reply_text(f'Файл "{file_name}" был получен')
+    #Отправляем пользователю сообщение о получении файла
+    await uSendRecipt(file_name, update, context)
 
-
-    for i in ADMIN:
-      # Отправить файл другому пользователю
-      await context.bot.send_document(chat_id=i, document=open(new_file_path, 'rb'))
+    await aRecipt(new_file_path, update.effective_user.username, order['ids'], order['sum'], update, context)
 
     # Отправить сообщение о том, что файл был отправлен
     update.message.reply_text(f'Файл был отправлен пользователю')

@@ -4,6 +4,7 @@ import os
 
 from src.view.admin.recipt import recipt as aRecipt
 from src.view.recipt import recipt as uSendRecipt
+from src.model.user import user as u
 
 from src.model.order import order as o
 from config import ADMIN
@@ -31,6 +32,7 @@ async def handle_document(update: Update, context: CallbackContext):
     await uSendRecipt(file_name, update, context)
 
     await aRecipt(new_file_path, update.effective_user.username, order['ids'], order['sum'], update, context)
+    u.state("await_email_url", update.message.chat_id)
 
     # Отправить сообщение о том, что файл был отправлен
     update.message.reply_text(f'Файл был отправлен пользователю')

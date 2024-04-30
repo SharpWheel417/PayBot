@@ -20,9 +20,6 @@ if __name__ == '__main__':
     document_handler = MessageHandler(filters.Document.PDF, handle_document)
     application.add_handler(document_handler)
 
-    # photo_handler = MessageHandler(filters.PHOTO, handle_photo)
-    # application.add_handler(photo_handler)
-
     message_handler = MessageHandler(filters.TEXT, handle_message)
     application.add_handler(message_handler)
 

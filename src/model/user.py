@@ -58,7 +58,7 @@ def add_new_user(chat_id, name, first_name) -> None:
             print("Пользователь с таким chat_id уже существует")
         else:
             current_date = datetime.datetime.now()
-            query = f"INSERT INTO users (id, username, chat_id, full_name, date) VALUES ({max_id()+1}, '{name}', '{chat_id}', '{first_name}', '{current_date}')"
+            query = f"INSERT INTO users (id, username, chat_id, full_name, date, state) VALUES ({max_id()+1}, '{name}', '{chat_id}', '{first_name}', '{current_date}', 'start')"
             # Вставляем пользователя, если он не существует
             cur.execute(query)
             conn.commit()  # Не забудьте подтвердить транзакцию, если требуется

@@ -111,7 +111,7 @@ CREATE TABLE "public"."users" (
 ) WITH (oids = false);
 
 INSERT INTO "users" ("id", "username", "chat_id", "state", "full_name") VALUES
-(3,	'Summer_Death',	'1194700554',	'email&url',	'Gleb Petrov'),
+(3,	'Summer_Death',	'1194700554',	'await_email_url',	'Gleb Petrov'),
 (4,	'--Xd Out',	'6908096537',	'order_complete',	'Xd Out');
 
 DROP TABLE IF EXISTS "vars";

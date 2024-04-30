@@ -22,3 +22,7 @@ async def complete_order(chat_id: str, update: Update, context: ContextTypes.DEF
 async def error_order(chat_id: str, update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await context.bot.send_message(chat_id=chat_id, text="К сожалению ваш заказ не получлось выполнить. Деньги вернутся на вашу карту")
+
+async def cancle_order(chat_id: str, update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+    await context.bot.send_message(chat_id=chat_id, text="К сожалению ваш заказ не получится выполнить")

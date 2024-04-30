@@ -8,12 +8,16 @@ from src.view.comfrim_sum import no, yes
 from src.view.admin.order import apply_order, cancle_order
 from src.model.order import close_order, recipt_order, get_order_ids, get_order_sum
 from src.view.recipt import u_a_apply_recipt, u_a_cancle_recipt
-from src.view.order import complete_order, error_order
+from src.view.order import complete_order, error_order, cancle_order
+from src.view.order import cancle_order as u_cancle_order
 
 from src.model.order import order as o
 from src.model.user import user as u
 
 async def button_callback(update: Update, context: CallbackContext, *args, **kwargs):
+
+    pattern = r"ID заказа: \b[A-Fa-f0-9-]+\b"
+
     query = update.callback_query
     # Получаем callback_data из нажатой кнопки
     callback_data = update.callback_query.data
@@ -46,9 +50,16 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
 
     #Админ отказывается от заказа
     if callback_data == "cancle_order":
+        text = update.callback_query.message.text
+        ids = re.search(pattern, text).group()
+        ids = ids.replace("ID заказа: ", "")
+        chat_id = o.chat_id(ids)
         # Удалить кнопки после обработки
-        await remove_buttons(update, context)
+        o.status('cancle', ids)
         await cancle_order(update, context)
+        #Сообщение об отмене заказа для пользователя
+        await u_cancle_order(chat_id, update, context)
+        await remove_buttons(update, context)
         
     
     ##Подтверждение квитанции
@@ -82,7 +93,6 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
             await remove_buttons(update, context)
             
             
-    pattern = r"ID заказа: \b[A-Fa-f0-9-]+\b"
     
     ## Заказ выполнен
     if callback_data == "complete_order":

@@ -8,6 +8,7 @@ from src.view.have_order import have_order
 from src.view.came_email import came_email
 from src.view.admin.email import email as aEmail
 
+from src.model.variables import v
 from src.model.user import user as u
 
 email_regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
@@ -40,11 +41,19 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ### Пользователь ввел сумму
     ###
     else:
-        summ = int(text)
-        result = summ * 1.1
-        check = order.check(update.effective_user.username)
+        usd = float(v.usd())
+        marje = float(v.marje())
+        ## Переводим доллары в рубли
+        summ = round((int(text) * usd),2)
+        ## Плюсуем маржу
+        result = round((summ*marje),2)
+
+        ## Вычисляем прибыль
+        profit = round((result - summ),2)
+        ##Проверяем, есть ли у пользователя активный заказ
+        check = order.check(update.effective_chat.id)
         if not check:
-            if order.set(result, update.effective_user.username, update.effective_chat.id, "query"):
+            if order.set(result, usd, profit, marje,  update.effective_user.username, update.effective_chat.id, "query"):
                 await vOrder(result, update, context)
 
         else:

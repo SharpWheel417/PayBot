@@ -14,7 +14,7 @@ async def apply_order(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def cancle_order(update: Update, context: ContextTypes.DEFAULT_TYPE):
-  text = update.message.text
+  text = update.callback_query.message.text
 
   colon_index = text.index(":")
 

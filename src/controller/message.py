@@ -20,7 +20,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ###
     ### Пользователь ввел email и url
     ###
-    if u.get_state(update.message.chat_id) == "email&url":
+    if u.get_state(update.message.chat_id) == "await_email_url":
         
         try:
             email = re.search(email_regex, text).group()
@@ -31,7 +31,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if email and url:
             if order.email_url(email, url, update.effective_chat.id):
                 await aEmail(email, url, update, context)
-                u.state("await_completed", update.message.chat_id)
+                u.state("await_close_order", update.message.chat_id)
                 await came_email(update, context)
     
     ########################
@@ -54,6 +54,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         check = order.check(update.effective_chat.id)
         if not check:
             if order.set(result, usd, profit, marje,  update.effective_user.username, update.effective_chat.id, "query"):
+                u.state("await_recipt", update.message.chat_id)
                 await vOrder(result, update, context)
 
         else:

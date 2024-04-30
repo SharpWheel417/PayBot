@@ -20,6 +20,7 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
 
     ##Оплатить покупку или услугу в интернете
     if callback_data == "payment":
+        u.state('await_sum', update.effective_chat.id)
         await payment(update, context)
 
     ##Если пользователь соглашается с заказом и ценой
@@ -60,7 +61,7 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
         if o.state("apply_recipt", ids):
             chat_id = o.chat_id(ids)
             
-            u.state('email&url', chat_id)
+            u.state('await_email_url', chat_id)
             # Удалить кнопки после обработки
             await remove_buttons(update, context)
             
@@ -73,8 +74,9 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
         ## IDS заказа   
         ids = file_name.split(".pdf")[0]
         if o.state('cancle_recipt', ids):
+            o.status('cancle', ids)
             chat_id = o.chat_id(ids)
-            u.state('cancle_recipt', chat_id)
+            u.state('await_sum', chat_id)
             await u_a_cancle_recipt(chat_id, update, context)
             # Удалить кнопки после обработки
             await remove_buttons(update, context)

@@ -23,5 +23,14 @@ class Vars:
     def phone(self):
         return self.get_vars('phone')
 
+    def trade_type(self):
+        return self.get_vars('trade_type')
+    
+    def usd(self):
+        return self.get_vars('course_usd')
+    
+    def marje(self):
+        return self.get_vars('marje')
+
 
 v = Vars()

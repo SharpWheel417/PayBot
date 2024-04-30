@@ -8,12 +8,12 @@ class Order:
         pass
     
     
-    def set(self, summ: int, user: int, chatId: int, state: str) -> bool:
+    def set(self, summ: float, course: float, profit: float, marje: float,  user: int, chatId: int, state: str) -> bool:
         'Заносим заказ в БД'
 
         current_date = datetime.datetime.now()
         ids = str(uuid.uuid4())
-        query = f"INSERT INTO orders (id, ids, username, chat_id, sum, date, state, status) VALUES ({max_id()+1}, '{ids}','{user}', '{chatId}', {summ}, '{current_date}', '{state}', 'active')"
+        query = f"INSERT INTO orders (id, ids, username, chat_id, sum, course, profit, marje, date, state, status) VALUES ({max_id()+1}, '{ids}','{user}', '{chatId}', {summ}, {course}, {profit}, {marje}, '{current_date}', '{state}', 'active')"
         print(query)
         try:
         # Вставьте текущую дату в таблицу "order"

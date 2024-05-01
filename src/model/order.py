@@ -93,7 +93,7 @@ class Order:
         try:
             cur.execute(query)
             conn.commit()
-            print("Квитанция принята")
+            print("Статус заказа изменен на: ", status)
             return True
         except Exception as e:
             conn.rollback()

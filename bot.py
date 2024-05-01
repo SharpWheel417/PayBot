@@ -5,9 +5,17 @@ from config import BOT_TOKEN, ADMIN
 from src.controller.button import button_callback
 from src.controller.message import handle_message
 from src.controller.document import handle_document
-# from src.controller.photo import handle_photo
-from src.view.start import start
 
+from src.model.variables import v
+
+from src.view.start import start
+from src.parsing.parse import get_currency
+
+course = get_currency()
+print(course)
+if course != 'Error':
+    if v.set_usd(course):
+        print("Курс установлен: ", course)
 
 if __name__ == '__main__':
     application = ApplicationBuilder().token(BOT_TOKEN).build()

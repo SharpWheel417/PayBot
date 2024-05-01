@@ -1,0 +1,31 @@
+version: "3.3"
+
+networks:
+  db_net:
+
+services:
+  db:
+    image: postgres:latest
+    container_name: "DataBase"
+    networks:
+      - db_net
+    ports:
+      - 127.0.0.1:5432:5432  
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
+      POSTGRES_DB: db
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ./configs/db:/docker-entrypoint-initdb.d/
+      - ./db:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer:latest
+    container_name: "Adminer"
+    networks:
+      - db_net
+    restart: always
+    ports:
+      - 127.0.0.1:8080:8080

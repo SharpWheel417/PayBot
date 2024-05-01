@@ -34,6 +34,9 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
 
         ids = get_order_ids(update.effective_user.username)
         sum = get_order_sum(update.effective_user.username)
+
+        u.state('await_recipt', update.effective_chat.id)
+
         await yes(ids, sum, update, context)
 
     #Если ппользователь оттказывается от заказа

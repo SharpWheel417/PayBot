@@ -54,7 +54,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         check = order.check(update.effective_chat.id)
         if not check:
             if order.set(result, usd, profit, marje,  update.effective_user.username, update.effective_chat.id, "query"):
-                u.state("await_recipt", update.message.chat_id)
                 await vOrder(result, update, context)
 
         else:

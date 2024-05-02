@@ -6,8 +6,8 @@ import uuid
 class Order:
     def __init__(self) -> None:
         pass
-    
-    
+
+
     def set(self, summ: float, course: float, profit: float, marje: float,  user: int, chatId: int, state: str) -> bool:
         'Заносим заказ в БД'
 
@@ -25,8 +25,8 @@ class Order:
             conn.rollback()
             print("Error:", e)
             return False
-    
-    
+
+
 
     def get_state(self, username):
         query = f"SELECT state FROM orders WHERE username = '{username}'"
@@ -70,8 +70,8 @@ class Order:
             conn.rollback()
             print("Error:", e)
             return "Error"
-        
-        
+
+
     def state(self, state: str, ids: str) -> bool:
         'Обновляем state заказа'
         query = f"UPDATE orders SET state = '{state}' WHERE ids = '{ids}'"
@@ -85,7 +85,7 @@ class Order:
             conn.rollback()
             print("Error:", e)
             return False
-        
+
     def status(self, status: str, ids: str) -> bool:
         'Обновляем state заказа'
         query = f"UPDATE orders SET status = '{status}' WHERE ids = '{ids}'"
@@ -99,7 +99,7 @@ class Order:
             conn.rollback()
             print("Error:", e)
             return False
-        
+
     def email_url(self, email: str, url:set, chat_id: str) -> bool:
         'Обновляем email и url заказа'
         query = f"UPDATE orders SET email = '{email}', url = '{url}' WHERE chat_id = '{chat_id}' AND status = 'active'"
@@ -113,7 +113,7 @@ class Order:
             conn.rollback()
             print("Error:", e)
             return False
-            
+
     def chat_id(self, ids: str):
         'Получаем chat_id заказа'
         query = f"SELECT chat_id FROM orders WHERE ids = '{ids}'"
@@ -125,7 +125,53 @@ class Order:
         except Exception as e:
             conn.rollback()
             print("Error:", e)
-            
+
+
+    def get_orders(status: str):
+         ##TODO Хз какой статус поставить
+        query = f"SELECT * FROM orders WHERE status = '{status}'"
+        print(query)
+        try:
+            cur.execute(query)
+            result = cur.fetchall()
+            return result
+        except Exception as e:
+            conn.rollback()
+            print("Error:", e)
+            return []
+
+    ###
+    ### Заказы в работе
+    ###
+    def in_work(self):
+        'Получаем список заказов вработе'
+        ##TODO Хз какой статус поставить
+        return self.get_orders('work')
+
+    ###
+    ### Заказы в запросе
+    ###
+    def requests(self):
+        'Получаем список заказов запросов'
+        ##TODO Хз какой статус поставить
+        return self.get_orders('request')
+
+    ###
+    ### Заказы выполненые
+    ###
+    def completes(self):
+        'Получаем список выполненыех заказов'
+        ##TODO Хз какой статус поставить
+        return self.get_orders('complete')
+
+
+    ###
+    ### Заказы отмененные
+    ###
+    def cancles(self):
+        'Получаем список отмененных заказов'
+        ##TODO Хз какой статус поставить
+        return self.get_orders('cancle')
 
 
 

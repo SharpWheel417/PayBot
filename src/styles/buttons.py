@@ -30,6 +30,5 @@ admin_order = InlineKeyboardMarkup([[complete_order], [error_order]])
 
 def admin_buttons():
     return ReplyKeyboardMarkup(
-            [['Изменить курс', 'Заказы'], ['Узнать курс', 'Узнать маржу', 'Статистика'], ['Калькулятор'],['Остановить переписку с юзером']],
-            resize_keyboard=True
-        )
+            [['Заказы'], ['Курс', 'Маржа'], ['Калькулятор', 'Статистика']]
+            resize_keyboard=True)

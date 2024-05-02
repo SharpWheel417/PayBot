@@ -1,21 +1,17 @@
 from telegram import Bot, Update, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, CallbackQueryHandler, CallbackContext
 
-from config import BOT_TOKEN, ADMIN
+from config import BOT_TOKEN
 from src.controller.button import button_callback
 from src.controller.message import handle_message
 from src.controller.document import handle_document
 
-from src.model.variables import v
-
 from src.view.start import start
-from src.parsing.parse import get_currency
+from src.parsing.shed import run_scheduler
+from src.controller.sendmess import sendmess
 
-course = get_currency()
-print(course)
-if course != 'Error':
-    if v.set_usd(course):
-        print("Курс установлен: ", course)
+sendmess("Бот запущен")
+run_scheduler()
 
 if __name__ == '__main__':
     application = ApplicationBuilder().token(BOT_TOKEN).build()

@@ -2,6 +2,21 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import WebDriverException
 
+from src.controller.sendmess import sendmess
+from src.model.variables import v
+
+
+def parsing():
+    course = get_currency()
+    if course != 'Error':
+        if v.set_usd(course):
+            sendmess("Курс взят: "+course+"")
+            print("Курс установлен: ", course)
+
+    else:
+        sendmess("Ошибка получения курса: "+course)
+
+
 def get_currency() -> float:
 
     """

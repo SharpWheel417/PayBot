@@ -1,4 +1,4 @@
--- Adminer 4.8.1 PostgreSQL 16.2 (Debian 16.2-1.pgdg120+2) dump
+-- Adminer 4.8.1 PostgreSQL 16.2 (Debian 16.2-1.pgdg120+2) dump;
 
 DROP TABLE IF EXISTS "data";
 DROP SEQUENCE IF EXISTS data_id_seq;
@@ -30,8 +30,8 @@ INSERT INTO "data" ("id", "type", "text") VALUES
 (3,	'info',	'Регион карты — 🇰🇿 Казахстан
 Ограничения по оплате:
 1) Убедитесь, что в аккаунте/магазине выставлен корректный регион.
-2) Нельзя привязать карту в аккаунт PayPal 
-                                       
+2) Нельзя привязать карту в аккаунт PayPal
+
 В какой валюте будет списание?
 Пожалуйста, убедитесь, что в сервисе выполняется покупка именно в указанной вами валюте. '),
 (5,	'dollar',	'Введите нужную вам сумму в долларах'),
@@ -112,7 +112,7 @@ CREATE TABLE "public"."users" (
 
 INSERT INTO "users" ("id", "username", "chat_id", "state", "full_name") VALUES
 (3,	'Summer_Death',	'1194700554',	'await_email_url',	'Gleb Petrov'),
-(4,	'--Xd Out',	'6908096537',	'order_complete',	'Xd Out');
+(4,	'--Xd Out',	'6908096537',	'await_sum',	'Xd Out');
 
 DROP TABLE IF EXISTS "vars";
 DROP SEQUENCE IF EXISTS vars_id_seq;
@@ -126,9 +126,10 @@ CREATE TABLE "public"."vars" (
 ) WITH (oids = false);
 
 INSERT INTO "vars" ("id", "type", "text") VALUES
-(1,	'course_usd                                                                                          ',	'91.2'),
 (2,	'course_euro                                                                                         ',	'105.5'),
 (3,	'phone                                                                                               ',	'+7-913-320-29-81'),
-(4,	'trade_type                                                                                          ',	'Сбербанк');
+(4,	'trade_type                                                                                          ',	'Сбербанк'),
+(1,	'course_usd                                                                                          ',	'91.235577'),
+(5,	'marje                                                                                               ',	'1.1');
 
--- 2024-04-29 15:47:42.60764+00
+-- 2024-05-03 13:08:15.244618+00

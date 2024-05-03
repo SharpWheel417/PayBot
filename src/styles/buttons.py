@@ -28,8 +28,29 @@ error_order = InlineKeyboardButton('Не получилось выполнить
 admin_order = InlineKeyboardMarkup([[complete_order], [error_order]])
 
 
-def admin_buttons():
-    return ReplyKeyboardMarkup(
-            [['Изменить курс', 'Заказы'], ['Узнать курс', 'Узнать маржу', 'Статистика'], ['Калькулятор'],['Остановить переписку с юзером']],
-            resize_keyboard=True
-        )
+class Admin():
+    def __init__(self) -> None:
+        pass
+
+
+    def admin_buttons(self):
+        return ReplyKeyboardMarkup(
+            [['Заказы'], ['Курс', 'Маржа'], ['Калькулятор', 'Статистика']],
+            resize_keyboard=True)
+
+    def orders(self):
+        return ReplyKeyboardMarkup([['В работе'], ['Заявки'], ['Выполненые', 'Отмененные'], ['Все заказы']], resize_keyboard=True)
+
+    def course(self):
+        return ReplyKeyboardMarkup([['Узнать курс'], ['Изменить курс']], resize_keyboard=True)
+
+    def marje(self):
+        return ReplyKeyboardMarkup([['Узнать маржу'], ['Изменить маржу']], resize_keyboard=True)
+
+    def calculate(self):
+        return ReplyKeyboardMarkup([['Рубль в доллары'], ['Доллар в рубль']], resize_keyboard=True)
+
+    def stats(self):
+        return ReplyKeyboardMarkup([['Пользователи'],['Заказы'], ['Выручка']], resize_keyboard=True)
+
+admin = Admin()

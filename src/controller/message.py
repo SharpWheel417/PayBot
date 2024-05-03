@@ -8,6 +8,9 @@ from src.view.have_order import have_order
 from src.view.came_email import came_email
 from src.view.admin.email import email as aEmail
 
+from config import ADMIN
+from src.controller.admin import admin_way
+
 from src.model.variables import v
 from src.model.user import user as u
 
@@ -16,12 +19,16 @@ url_regex = r'(https?://[^\s]+)'
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
-    
+
+    ##Сообщения админа
+    if update.effective_chat.id in ADMIN:
+        admin_way(text, update, context)
+
     ###
     ### Пользователь ввел email и url
     ###
     if u.get_state(update.message.chat_id) == "await_email_url":
-        
+
         try:
             email = re.search(email_regex, text).group()
             url = re.search(url_regex, text).group()
@@ -33,10 +40,10 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 await aEmail(email, url, update, context)
                 u.state("await_close_order", update.message.chat_id)
                 await came_email(update, context)
-    
+
     ########################
-        
-        
+
+
     ###
     ### Пользователь ввел сумму
     ###
@@ -59,7 +66,5 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
             o = order.get_active(update.message.chat_id)
             await have_order(o, update, context)
-            
+
     ######################
-        
-        

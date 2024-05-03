@@ -49,5 +49,9 @@ class Vars:
     def marje(self):
         return self.get_vars('marje')
 
+    def set_marje(self, marje:float) -> bool:
+        if self.set_vars(marje, 'marje'):
+            return True
+
 
 v = Vars()

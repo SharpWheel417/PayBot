@@ -2,6 +2,7 @@ from telegram import Bot, Update, ReplyKeyboardMarkup, InlineKeyboardMarkup, Inl
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, CallbackQueryHandler, CallbackContext
 
 from src.view.admin.stats import stats
+from src.model.stats import stats as dbStats
 from src.model.order import order
 from src.model.user import user
 from src.model.variables import v
@@ -104,3 +105,10 @@ async def admin_way(text, update: Update, context: ContextTypes.DEFAULT_TYPE):
 
   if text == 'Статистика':
     await stats.statistic(update, context)
+
+  if text == 'Пользователи':
+    users = dbStats.all_users()
+    await stats.users(users, update, context)
+
+  if text == 'Выполненые':
+    num = dbStats.orders()

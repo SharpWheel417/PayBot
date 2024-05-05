@@ -1,4 +1,4 @@
-from connect import cur, conn
+from src.model.connect import cur, conn
 
 
 class Stats():
@@ -9,7 +9,7 @@ class Stats():
   def take(self, query: str):
     try:
       cur.execute(query)
-      txt = cur.fetchone()
+      txt = cur.fetchall()
       if txt != "":
           return txt
     except Exception as e:
@@ -22,8 +22,10 @@ class Stats():
     return self.take("SELECT * from users")
 
   def orders(self):
-    return self.take("SELECT * from order")
+    return self.take("SELECT * from order WHERE status='complete'")
 
   def all_money(self):
     ##TODO У нас нет в БД поля с прибылью ???!!!!
     return self.take("SELECT all from orders WHERE status = 'complete'")
+
+stats = Stats()

@@ -79,14 +79,30 @@ class Stats():
       await context.bot.send_message(chat_id=update.effective_chat.id, text="СТатистика: ", reply_markup=admin.stats())
 
   async def users(self, users, update: Update, context: ContextTypes.DEFAULT_TYPE):
-      # for i in users:
-      #     await
-      ##TODO взять из
-      print(users)
+    messages = []
+    message = "Список юзеров:\n"
+    for row in users:
+        name = str(row[1]).replace(' ', '')
+        fio = str(row[4]).replace(' ', '')
+        date = str(row[5]).replace(' ', '')
+        message += f"@{name} :: {fio} :: {date}\n"
+        if len(message) > 3000:  # Пример максимальной длины сообщения
+            messages.append(message)
+            message = "Список юзеров (продолжение):\n"
+    # Добавить последнее сообщение, если оно не пустое
+    if message:
+        messages.append(message)
+    # Отправить сообщения в телеграмм
+    for msg in messages:
+        await context.bot.send_message(chat_id=update.effective_chat.id, text=msg)
+
+
+
 
   async def orders(self, orders, update: Update, context: ContextTypes.DEFAULT_TYPE):
-      for i in orders:
-          print(orders)
+        complete
+        clear =
+        await context.bot.send_message(chat_id=update.effective_chat.id, text="Выполнено: ")
 
   async def revenue(self, summ, update: Update, context: ContextTypes.DEFAULT_TYPE):
       await context.bot.send_message(chat_id=update.effective_chat.id, text="Выручка: "+summ+" руб.")

@@ -11,7 +11,6 @@ from src.parsing.shed import run_scheduler
 from src.controller.sendmess import sendmess
 
 sendmess("Бот запущен")
-run_scheduler()
 
 if __name__ == '__main__':
     application = ApplicationBuilder().token(BOT_TOKEN).build()

@@ -5,7 +5,7 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, Messa
 from config import ADMIN
 from src.model.data import mess
 
-from src.styles.buttons import buy_button, admin_buttons
+from src.styles.buttons import admin, buy_button
 
 import src.model.user as user
 
@@ -22,7 +22,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ### Админ ###
     if user_id in ADMIN:
         #admin panel
-        await context.bot.send_message(chat_id=update.effective_chat.id, text="Привет админ!", reply_markup=admin_buttons())
+        await context.bot.send_message(chat_id=update.effective_chat.id, text="Привет админ!", reply_markup=admin.admin_buttons())
 
     ### Юзер ###
     else:

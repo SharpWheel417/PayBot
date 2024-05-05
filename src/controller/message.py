@@ -22,49 +22,51 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     ##Сообщения админа
     if update.effective_chat.id in ADMIN:
-        admin_way(text, update, context)
+        await admin_way(text, update, context)
 
-    ###
-    ### Пользователь ввел email и url
-    ###
-    if u.get_state(update.message.chat_id) == "await_email_url":
-
-        try:
-            email = re.search(email_regex, text).group()
-            url = re.search(url_regex, text).group()
-        except Exception as e:
-            print(e)
-
-        if email and url:
-            if order.email_url(email, url, update.effective_chat.id):
-                await aEmail(email, url, update, context)
-                u.state("await_close_order", update.message.chat_id)
-                await came_email(update, context)
-
-    ########################
-
-
-    ###
-    ### Пользователь ввел сумму
-    ###
     else:
-        usd = float(v.usd())
-        marje = float(v.marje())
-        ## Переводим доллары в рубли
-        summ = round((int(text) * usd),2)
-        ## Плюсуем маржу
-        result = round((summ*marje),2)
 
-        ## Вычисляем прибыль
-        profit = round((result - summ),2)
-        ##Проверяем, есть ли у пользователя активный заказ
-        check = order.check(update.effective_chat.id)
-        if not check:
-            if order.set(result, usd, profit, marje,  update.effective_user.username, update.effective_chat.id, "query"):
-                await vOrder(result, update, context)
+        ###
+        ### Пользователь ввел email и url
+        ###
+        if u.get_state(update.message.chat_id) == "await_email_url":
 
+            try:
+                email = re.search(email_regex, text).group()
+                url = re.search(url_regex, text).group()
+            except Exception as e:
+                print(e)
+
+            if email and url:
+                if order.email_url(email, url, update.effective_chat.id):
+                    await aEmail(email, url, update, context)
+                    u.state("await_close_order", update.message.chat_id)
+                    await came_email(update, context)
+
+        ########################
+
+
+        ###
+        ### Пользователь ввел сумму
+        ###
         else:
-            o = order.get_active(update.message.chat_id)
-            await have_order(o, update, context)
+            usd = float(v.usd())
+            marje = float(v.marje())
+            ## Переводим доллары в рубли
+            summ = round((int(text) * usd),2)
+            ## Плюсуем маржу
+            result = round((summ*marje),2)
 
-    ######################
+            ## Вычисляем прибыль
+            profit = round((result - summ),2)
+            ##Проверяем, есть ли у пользователя активный заказ
+            check = order.check(update.effective_chat.id)
+            if not check:
+                if order.set(result, usd, profit, marje,  update.effective_user.username, update.effective_chat.id, "query"):
+                    await vOrder(result, update, context)
+
+            else:
+                o = order.get_active(update.message.chat_id)
+                await have_order(o, update, context)
+
+        ######################

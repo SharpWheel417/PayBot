@@ -10,7 +10,7 @@ def parsing():
     course = get_currency()
     if course != 'Error':
         if v.set_usd(course):
-            sendmess("Курс взят: "+course+"")
+            sendmess("Курс взят: "+str(course)+"")
             print("Курс установлен: ", course)
 
     else:

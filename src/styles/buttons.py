@@ -39,18 +39,18 @@ class Admin():
             resize_keyboard=True)
 
     def orders(self):
-        return ReplyKeyboardMarkup([['В работе'], ['Заявки'], ['Выполненые', 'Отмененные'], ['Все заказы']], resize_keyboard=True)
+        return ReplyKeyboardMarkup([['В работе'], ['Заявки'], ['Выполненые', 'Отмененные'], ['Все заказы'], ['Главное меню']], resize_keyboard=True)
 
     def course(self):
-        return ReplyKeyboardMarkup([['Узнать курс'], ['Изменить курс']], resize_keyboard=True)
+        return ReplyKeyboardMarkup([['Узнать курс'], ['Изменить курс'], ['Главное меню']], resize_keyboard=True)
 
     def marje(self):
-        return ReplyKeyboardMarkup([['Узнать маржу'], ['Изменить маржу']], resize_keyboard=True)
+        return ReplyKeyboardMarkup([['Узнать маржу'], ['Изменить маржу'], ['Главное меню']], resize_keyboard=True)
 
     def calculate(self):
-        return ReplyKeyboardMarkup([['Рубль в доллары'], ['Доллар в рубль']], resize_keyboard=True)
+        return ReplyKeyboardMarkup([['Рубль в доллары'], ['Доллар в рубль'], ['Главное меню']], resize_keyboard=True)
 
     def stats(self):
-        return ReplyKeyboardMarkup([['Пользователи'],['Заказы'], ['Выручка']], resize_keyboard=True)
+        return ReplyKeyboardMarkup([['Пользователи'],['Заказы'], ['Выручка'], ['Главное меню']], resize_keyboard=True)
 
 admin = Admin()

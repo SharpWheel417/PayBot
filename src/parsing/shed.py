@@ -10,14 +10,14 @@ scheduler_thread = None
 
 def run_scheduler():
     # Запуск шедулера каждый час
-    schedule.every(1).minutes.do(lambda: run_with_lock(lambda: parsing(), arg=True))
+    schedule.every(1).hour.do(lambda: run_with_lock(lambda: parsing(), arg=True))
 
     # Бесконечный цикл для запуска шедулера
     while True:
         schedule.run_pending()
         time.sleep(10)
 
-def run_with_lock(func):
+def run_with_lock(func, arg):
     with lock:
         func()
 

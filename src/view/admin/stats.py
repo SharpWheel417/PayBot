@@ -3,7 +3,7 @@ from telegram.ext import ContextTypes
 
 from config import ADMIN
 from src.styles.buttons import admin
-from src.styles.buttons import cancle_order
+from src.styles.buttons import co, admin_first
 from src.model.variables import v
 
 class Stats():
@@ -20,11 +20,20 @@ class Stats():
   async def orders_main(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text="Заказы: ", reply_markup=admin.orders())
 
-  async def orders_print(self, orders, update: Update, context: ContextTypes.DEFAULT_TYPE):
-      ##TODO Сделать красивую отпраку заказов в работе и не забыть про кнопки
+  async def orders_print(self, orders, type, update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+      if type == 'work':
+          btn = co
+      if type == 'complete':
+          btn = ''
+      if type == 'request':
+          btn = admin_first
+      if type == 'cancle':
+          btn = ''
+
+
       for row in orders:
-                order_id, status, date = row
-                await context.bot.send_message(chat_id=update.effective_chat.id, text=f"Order ID: {order_id}, Status: {status}, Date: {date}", reply_markup=InlineKeyboardButton([cancle_order]))
+        await context.bot.send_message(chat_id=update.effective_chat.id, text=f"ID заказа: {row[8]}\n Суммна: {row[2]}  Date: {row[3]}", reply_markup=btn)
 
   ########################
 
@@ -72,6 +81,15 @@ class Stats():
   async def calculate(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
       await context.bot.send_message(chat_id=update.effective_chat.id, text="Калькулятор: ", reply_markup=admin.calculate())
 
+  async def go_float(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+      await context.bot.send_message(chat_id=update.effective_chat.id, text="Введите число")
+
+  async def rub_to_usd(self, sum, update: Update, context: ContextTypes.DEFAULT_TYPE):
+      await context.bot.send_message(chat_id=update.effective_chat.id, text=f"{sum} $", reply_markup=admin.calculate())
+
+  async def usd_to_rub(self, sum, update: Update, context: ContextTypes.DEFAULT_TYPE):
+      await context.bot.send_message(chat_id=update.effective_chat.id, text=f"{sum} руб.", reply_markup=admin.calculate())
+
 
  ### СТАТИСТИКА ###
 
@@ -100,11 +118,9 @@ class Stats():
 
 
   async def orders(self, orders, update: Update, context: ContextTypes.DEFAULT_TYPE):
-        complete
-        clear =
-        await context.bot.send_message(chat_id=update.effective_chat.id, text="Выполнено: ")
+        await context.bot.send_message(chat_id=update.effective_chat.id, text="Выполнено: "+str(orders))
 
-  async def revenue(self, summ, update: Update, context: ContextTypes.DEFAULT_TYPE):
-      await context.bot.send_message(chat_id=update.effective_chat.id, text="Выручка: "+summ+" руб.")
+  async def profit(self, summ, update: Update, context: ContextTypes.DEFAULT_TYPE):
+      await context.bot.send_message(chat_id=update.effective_chat.id, text="Выручка: "+str(summ)+" руб.")
 
 stats = Stats()

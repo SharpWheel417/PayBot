@@ -16,16 +16,14 @@ class Stats():
       conn.rollback()
       print("Error:", e)
 
-
   def all_users(self):
     'Получаем всех пользователей из БД'
     return self.take("SELECT * from users")
 
   def orders(self):
-    return self.take("SELECT * from order WHERE status='complete'")
+    return self.take("SELECT COUNT(*) from orders WHERE status='complete'")[0][0]
 
   def all_money(self):
-    ##TODO У нас нет в БД поля с прибылью ???!!!!
-    return self.take("SELECT all from orders WHERE status = 'complete'")
+    return self.take("SELECT SUM(CAST(profit AS NUMERIC)) FROM orders WHERE status = 'complete'")[0][0]
 
 stats = Stats()

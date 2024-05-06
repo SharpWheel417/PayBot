@@ -21,19 +21,19 @@ async def admin_way(text, update: Update, context: ContextTypes.DEFAULT_TYPE):
 
   if text == 'В работе':
     orders = order.in_work()
-    await stats.orders_print(orders, update, context)
+    await stats.orders_print(orders, 'work', update, context)
 
   if text == 'Заявки':
     orders = order.requests()
-    await stats.orders_print(orders, update, context)
+    await stats.orders_print(orders, 'request', update, context)
 
   if text == 'Выполненые':
     orders = order.completes()
-    await stats.orders_print(orders, update, context)
+    await stats.orders_print(orders, 'complete', update, context)
 
   if text == 'Отмененные':
     orders = order.cancles()
-    await stats.orders_print(orders, update, context)
+    await stats.orders_print(orders, 'cancle', update, context)
 
   #################
 
@@ -93,12 +93,34 @@ async def admin_way(text, update: Update, context: ContextTypes.DEFAULT_TYPE):
 
   ############ КАЛЬКУЛЯТОР ###############
 
-  # if text == 'Калькулятор':
-  #   stats.calculate(update, context)
+  if text == 'Калькулятор':
+    await stats.calculate(update, context)
 
-  # if text == 'Рубль в доллары':
+  ### STATES ###
+  if user.get_state(update.effective_chat.id) == 'rub_to_usd':
+    sum =round( float(text) / float(v.usd()), 2)
+    await stats.rub_to_usd(sum, update, context)
+    user.state('', update.effective_chat.id)
 
-  # if text == 'Доллар в рубль'
+  if user.get_state(update.effective_chat.id) == 'usd_to_rub':
+    sum = round( float(text) * float(v.usd()), 2)
+    await stats.usd_to_rub(sum, update, context)
+    user.state('', update.effective_chat.id)
+
+
+
+  if text == 'Рубль в доллары':
+    user.state('rub_to_usd', update.effective_chat.id)
+    await stats.go_float(update, context)
+
+  if text == 'Доллар в рубль':
+    user.state('usd_to_rub', update.effective_chat.id)
+    await stats.go_float(update, context)
+
+
+
+
+
 
 
   ############# СТАТИСТИКА ########
@@ -110,5 +132,10 @@ async def admin_way(text, update: Update, context: ContextTypes.DEFAULT_TYPE):
     users = dbStats.all_users()
     await stats.users(users, update, context)
 
-  if text == 'Выполненые':
+  if text == 'Кол-во выполненых заказов':
     num = dbStats.orders()
+    await stats.orders(num, update, context)
+
+  if text == 'Выручка':
+    profit = dbStats.all_money()
+    await stats.profit(profit, update, context)

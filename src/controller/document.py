@@ -18,7 +18,7 @@ async def handle_document(update: Update, context: CallbackContext):
 
     order = o.get_active(update.message.chat_id)
 
-    new_file_path = os.path.join("static/recipt", order['ids'] + ".pdf")
+    new_file_path = os.path.join("static/recipt", str(order['ids']) + ".pdf")
 
     # Получить файл из Telegram API
     file_obj = await file.get_file()

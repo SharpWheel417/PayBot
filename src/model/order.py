@@ -13,7 +13,7 @@ class Order:
 
         current_date = datetime.datetime.now()
         ids = str(uuid.uuid4())
-        query = f"INSERT INTO orders (id, ids, username, chat_id, sum, course, profit, marje, date, state, status) VALUES ({max_id()+1}, '{ids}','{user}', '{chatId}', {summ}, {course}, {profit}, {marje}, '{current_date}', '{state}', 'active')"
+        query = f"INSERT INTO orders (id, ids, username, chat_id, sum, course, profit, marje, date, state, status) VALUES ({max_id()+1}, '{ids}','{user}', '{chatId}', {summ}, {course}, {profit}, {marje}, '{current_date}', '{state}', 'request')"
         print(query)
         try:
         # Вставьте текущую дату в таблицу "order"
@@ -56,7 +56,7 @@ class Order:
             return "Error"
 
     def get_active(self, chat_id: str):
-        query = f"SELECT ids, date, sum FROM orders WHERE chat_id = '{chat_id}' AND status = 'active'"
+        query = f"SELECT ids, date, sum FROM orders WHERE chat_id = '{chat_id}' AND status = 'work'"
         try:
             cur.execute(query)
             result = cur.fetchall()
@@ -127,7 +127,7 @@ class Order:
             print("Error:", e)
 
 
-    def get_orders(status: str):
+    def get_orders(self, status: str):
          ##TODO Хз какой статус поставить
         query = f"SELECT * FROM orders WHERE status = '{status}'"
         print(query)

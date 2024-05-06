@@ -15,6 +15,8 @@ apply_order = InlineKeyboardButton('Взять в работу', callback_data="
 
 cancle_order = InlineKeyboardButton('Отменить заказ', callback_data="cancle_order")
 
+co = InlineKeyboardMarkup([[cancle_order]])
+
 admin_first = InlineKeyboardMarkup([[apply_order], [cancle_order]])
 
 #Когда бот присылает админу квитанцию
@@ -51,6 +53,6 @@ class Admin():
         return ReplyKeyboardMarkup([['Рубль в доллары'], ['Доллар в рубль'], ['Главное меню']], resize_keyboard=True)
 
     def stats(self):
-        return ReplyKeyboardMarkup([['Пользователи'],['Заказы'], ['Выручка'], ['Главное меню']], resize_keyboard=True)
+        return ReplyKeyboardMarkup([['Пользователи'],['Кол-во выполненых заказов'], ['Выручка'], ['Главное меню']], resize_keyboard=True)
 
 admin = Admin()

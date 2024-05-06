@@ -8,16 +8,16 @@ from src.styles.buttons import yes, no
 async def order(summ, update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     keyboard = InlineKeyboardMarkup([[yes], [no]])
-    
+
     txt = mess("to_pay").format(summ=summ)
 
     await context.bot.send_message(chat_id=update.effective_chat.id, text=txt ,reply_markup=keyboard)
-    
+
 
 async def complete_order(chat_id: str, update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await context.bot.send_message(chat_id=chat_id, text="Заказ успешно выполнен!")
-    
+
 
 async def error_order(chat_id: str, update: Update, context: ContextTypes.DEFAULT_TYPE):
 

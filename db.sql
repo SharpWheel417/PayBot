@@ -50,7 +50,25 @@ ID заказа: {ids}
 После перевода пришлите квитанцию об оплате.'),
 (11,	'have_order',	'У вас уже имеется заказ от {date}
 
-ID заказа: {ids}');
+ID заказа: {ids}'),
+(12,	'await_admin',	'Ожидайте, пока оператор привет ваш заказ'),
+(13,	'user_send_recipt',	'Квитанция отправлена оператору'),
+(14,	'came_recipt',	'Пришла квитанция от юзера {username}
+ID заказа: {ids}
+На сумму: {sum}'),
+(16,	'came_email_url',	'Пришли ссылка и емайл
+
+email: {email}
+url: {url}
+
+ID заказа: {ids}
+От пользователя @{username}
+Сумма: {sum}
+От: {date}'),
+(15,	'u_a_apply_recipt',	'Оплата принята!
+
+Пожалуйста, пришлите одним сообщением  вашу электронную почту и скопированную  ссылку из браузера на страницу с формой оплаты (например, как на скриншоте). Отправьте их в этот чат, и мы проведем оплату в течении нескольких минут. '),
+(17,	'u_a_cancle_recipt',	'Квитанция не принята');
 
 DROP TABLE IF EXISTS "orders";
 DROP SEQUENCE IF EXISTS order_id_seq;
@@ -61,17 +79,24 @@ CREATE TABLE "public"."orders" (
     "username" text NOT NULL,
     "sum" text NOT NULL,
     "email" text,
-    "link" text,
+    "url" text,
     "date" date NOT NULL,
     "state" text NOT NULL,
     "chat_id" text NOT NULL,
     "ids" text NOT NULL,
+    "course" text,
+    "marje" text,
+    "profit" text,
+    "status" text,
     CONSTRAINT "order_pkey" PRIMARY KEY ("id")
 ) WITH (oids = false);
 
-INSERT INTO "orders" ("id", "username", "sum", "email", "link", "date", "state", "chat_id", "ids") VALUES
-(4,	'Summer_Death',	'22.0',	NULL,	NULL,	'2024-04-26',	'yes',	'1194700554',	'0a4a46b2-de55-4496-aad3-f4095664ab91'),
-(5,	'None',	'22.0',	NULL,	NULL,	'2024-04-29',	'receipt',	'6908096537',	'23b5905b-b2a3-49d7-a1c3-a8746f44d967');
+INSERT INTO "orders" ("id", "username", "sum", "email", "url", "date", "state", "chat_id", "ids", "course", "marje", "profit", "status") VALUES
+(1,	'None',	'17499.6',	NULL,	NULL,	'2024-05-06',	'receipt',	'6908096537',	'd785d636-0912-457c-b384-a7129e7f1d1d',	'91.12',	'1.15',	'2282.56',	'cancle'),
+(4,	'None',	'5868.13',	NULL,	NULL,	'2024-05-06',	'receipt',	'6908096537',	'e0c74239-2fbe-4f7b-98d5-861813f97e64',	'91.12',	'1.15',	'765.41',	'request'),
+(2,	'None',	'7963.89',	NULL,	NULL,	'2024-05-06',	'receipt',	'6908096537',	'3d89f977-6d5b-426b-ad6f-b821385cf744',	'91.12',	'1.15',	'1038.77',	'cancle'),
+(5,	'None',	'7020.8',	NULL,	NULL,	'2024-05-06',	'receipt',	'6908096537',	'0d362f24-fbb6-460a-93ad-b4dce240651a',	'91.12',	'1.15',	'915.76',	'request'),
+(3,	'None',	'9430.92',	NULL,	NULL,	'2024-05-06',	'order_complete',	'6908096537',	'729e5eb7-572b-4bd0-a2ce-b88bff258e6f',	'91.12',	'1.15',	'1230.12',	'complete');
 
 DROP TABLE IF EXISTS "users";
 DROP SEQUENCE IF EXISTS users_id_seq;
@@ -83,12 +108,14 @@ CREATE TABLE "public"."users" (
     "chat_id" text NOT NULL,
     "state" text,
     "full_name" text,
+    "date" timestamp,
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 ) WITH (oids = false);
 
-INSERT INTO "users" ("id", "username", "chat_id", "state", "full_name") VALUES
-(4,	'--Xd Out',	'6908096537',	NULL,	'Xd Out'),
-(3,	'Summer_Death',	'1194700554',	'',	'Gleb Petrov');
+INSERT INTO "users" ("id", "username", "chat_id", "state", "full_name", "date") VALUES
+(5,	'satterris',	'1063428670',	'start',	'Анна',	'2024-05-05 19:27:21.30217'),
+(3,	'Summer_Death',	'1194700554',	'await_recipt',	'Gleb Petrov',	NULL),
+(4,	'--Xd Out',	'6908096537',	'order_complete',	'Xd Out',	NULL);
 
 DROP TABLE IF EXISTS "vars";
 DROP SEQUENCE IF EXISTS vars_id_seq;
@@ -105,7 +132,7 @@ INSERT INTO "vars" ("id", "type", "text") VALUES
 (2,	'course_euro                                                                                         ',	'105.5'),
 (3,	'phone                                                                                               ',	'+7-913-320-29-81'),
 (4,	'trade_type                                                                                          ',	'Сбербанк'),
-(1,	'course_usd                                                                                          ',	'12.0'),
-(5,	'marje                                                                                               ',	'1.15');
+(5,	'marje                                                                                               ',	'1.15'),
+(1,	'course_usd                                                                                          ',	'91.12');
 
--- 2024-05-05 06:37:57.256755+00
+-- 2024-05-06 11:04:08.553834+00

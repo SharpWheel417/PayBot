@@ -10,12 +10,7 @@ from config import ADMIN
 ## Пользователь согласен с условиями
 async def yes(ids, sum, update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-    txt = mess("yes").format(
-        phone=v.phone(),
-        trade_type="Сбербанк",
-        sum=sum,
-        ids=ids
-        )
+    txt=mess("await_admin")
 
     txt_admin = mess("order_request").format(
         ids=ids,
@@ -24,11 +19,11 @@ async def yes(ids, sum, update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
     await context.bot.send_message(chat_id=update.effective_chat.id, text=txt)
-    
+
     for i in ADMIN:
         await context.bot.send_message(chat_id=i, text=txt_admin, reply_markup=admin_first)
-         
-        
+
+
 async def no(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     txt = mess("no")

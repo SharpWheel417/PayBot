@@ -7,6 +7,7 @@ from src.model.order import order
 from src.view.have_order import have_order
 from src.view.came_email import came_email
 from src.view.admin.email import email as aEmail
+from src.view.payment import my_summ
 
 from config import ADMIN
 from src.controller.admin import admin_way
@@ -25,6 +26,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await admin_way(text, update, context)
 
     else:
+
+        if text == 'Ввести свою сумму':
+            await my_summ(update, context)
 
         ###
         ### Пользователь ввел email и url
@@ -50,18 +54,18 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ### Пользователь ввел сумму
         ###
         else:
-            usd = float(v.usd())
-            marje = float(v.marje())
-            ## Переводим доллары в рубли
-            summ = round((int(text) * usd),2)
-            ## Плюсуем маржу
-            result = round((summ*marje),2)
-
-            ## Вычисляем прибыль
-            profit = round((result - summ),2)
-            ##Проверяем, есть ли у пользователя активный заказ
             check = order.check(update.effective_chat.id)
             if not check:
+                usd = float(v.usd())
+                marje = float(v.marje())
+                ## Переводим доллары в рубли
+                summ = round((int(text) * usd),2)
+                ## Плюсуем маржу
+                result = round((summ*marje),2)
+
+                ## Вычисляем прибыль
+                profit = round((result - summ),2)
+                ##Проверяем, есть ли у пользователя активный заказ
                 if order.set(result, usd, profit, marje,  update.effective_user.username, update.effective_chat.id, "query"):
                     await vOrder(result, update, context)
 

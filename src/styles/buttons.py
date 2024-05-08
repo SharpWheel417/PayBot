@@ -1,5 +1,7 @@
-from telegram import Bot, Update, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton
-from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, CallbackQueryHandler, CallbackContext
+from telegram import ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
+
+
+user_base = ReplyKeyboardMarkup([['10', '15', '20'], ['25', '30', '35'], ['Ввести свою сумму']], resize_keyboard=True)
 
 
 #Кнопка "Оплатить покупку"

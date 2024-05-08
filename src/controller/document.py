@@ -6,6 +6,8 @@ from src.view.admin.recipt import recipt as aRecipt
 from src.view.recipt import recipt as uSendRecipt
 from src.model.user import user as u
 
+from src.view.error import error_mess
+
 from src.model.order import order as o
 from config import ADMIN
 
@@ -20,8 +22,12 @@ async def handle_document(update: Update, context: CallbackContext):
 
     new_file_path = os.path.join("static/recipt", order['ids'] + ".pdf")
 
-    # Получить файл из Telegram API
-    file_obj = await file.get_file()
+    try:
+        # Получить файл из Telegram API
+        file_obj = await file.get_file()
+    except Exception as e:
+        await error_mess(str(e), update, context)
+        return
 
     # Сохранить файл на диск с новым именем и путем
     with open(new_file_path, 'wb') as new_file:

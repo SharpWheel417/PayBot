@@ -7,6 +7,7 @@ from src.model.order import order
 from src.view.have_order import have_order
 from src.view.came_email import came_email
 from src.view.admin.email import email as aEmail
+from src.view.payment import my_summ
 
 from config import ADMIN
 from src.controller.admin import admin_way
@@ -25,6 +26,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await admin_way(text, update, context)
 
     else:
+
+        if text == 'Ввести свою сумму':
+            await my_summ(update, context)
 
         ###
         ### Пользователь ввел email и url

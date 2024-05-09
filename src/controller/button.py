@@ -30,8 +30,10 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
 
     ##Если пользователь соглашается с заказом и ценой
     if callback_data == "yes":
-            #State заказа переводится в recipt (квитанция)
+        #State заказа переводится в recipt (квитанция)
         recipt_order(update.effective_user.username)
+
+        current_time = datetime.now().time()
 
         ids = get_order_ids(update.effective_user.username)
         sum = get_order_sum(update.effective_user.username)

@@ -101,6 +101,20 @@ class Order:
             print("Error:", e)
             return False
 
+    def where_status(self, status: str) -> bool:
+        'Обновляем state заказа'
+        query = f"SELECT ids FROM orders WHERE status = '{status}'"
+        print(query)
+        try:
+            cur.execute(query)
+            conn.commit()
+            print("Статус заказа изменен на: ", status)
+            return True
+        except Exception as e:
+            conn.rollback()
+            print("Error:", e)
+            return False
+
     def email_url(self, email: str, url:set, chat_id: str) -> bool:
         'Обновляем email и url заказа'
         query = f"UPDATE orders SET email = '{email}', url = '{url}' WHERE chat_id = '{chat_id}' AND status = 'active'"
@@ -264,10 +278,10 @@ def close_order(username: str):
         print("Error:", e)
 
 
-def recipt_order(username: str):
+def recipt_order(chat_id: str, status: str):
     'Обновляем заказ в БД'
 
-    query = f"UPDATE orders SET state = 'receipt' WHERE username = '{username}'"
+    query = f"UPDATE orders SET state = 'receipt', status='{status}' WHERE chat_id = '{chat_id}'"
     print(query)
     try:
         cur.execute(query)

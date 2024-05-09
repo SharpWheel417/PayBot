@@ -13,7 +13,7 @@ class Order:
 
         current_date = datetime.datetime.now()
         ids = str(uuid.uuid4())
-        query = f"INSERT INTO orders (id, ids, username, chat_id, sum, course, profit, marje, date, state, status) VALUES ({max_id()+1}, '{ids}','{user}', '{chatId}', {summ}, {course}, {profit}, {marje}, '{current_date}', '{state}', 'request')"
+        query = f"INSERT INTO orders (id, ids, username, chat_id, sum, course, profit, marje, date, state, status, timechk) VALUES ({max_id()+1}, '{ids}','{user}', '{chatId}', {summ}, {course}, {profit}, {marje}, '{current_date}', '{state}', 'request', 'start')"
         print(query)
         try:
         # Вставьте текущую дату в таблицу "order"
@@ -56,7 +56,7 @@ class Order:
             return "Error"
 
     def get_active(self, chat_id: str):
-        query = f"SELECT ids, date, sum FROM orders WHERE chat_id = '{chat_id}' AND status = 'work'"
+        query = f"SELECT ids, date, sum, timechk FROM orders WHERE chat_id = '{chat_id}' AND status = 'active'"
         try:
             cur.execute(query)
             result = cur.fetchall()
@@ -64,6 +64,7 @@ class Order:
                 'ids': result[0][0],
                 'date': result[0][1],
                 'sum': result[0][2],
+                'timechk': result[0][3],
                 }
             return o
         except Exception as e:
@@ -125,6 +126,29 @@ class Order:
         except Exception as e:
             conn.rollback()
             print("Error:", e)
+
+
+    def get_timechk(self):
+        query = f"SELECT ids, date FROM orders WHERE timechk = 'start'"
+        try:
+            cur.execute(query)
+            result = cur.fetchall()
+            return result
+        except Exception as e:
+            conn.rollback()
+            print("Error:", e)
+
+    def set_timechk(self, timechk: str, ids: str) -> bool:
+        query = f"UPDATE orders SET timechk = '{timechk}' WHERE ids='{ids}'"
+        try:
+            cur.execute(query)
+            conn.commit()
+            print("Время проверки изменено")
+            return True
+        except Exception as e:
+            conn.rollback()
+            print("Error:", e)
+            return False
 
 
     def get_orders(self, status: str):

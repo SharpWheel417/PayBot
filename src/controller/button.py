@@ -70,7 +70,7 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
 
         o.state('await_recipt', order_id)
         u.state('await_recipt', update.effective_chat.id)
-        o.status('work', order_id)
+        o.status('active', order_id)
 
         await apply_order(update, context)
 

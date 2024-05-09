@@ -1,5 +1,4 @@
-from telegram import Bot, Update, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton
-from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, CallbackQueryHandler, CallbackContext
+from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, CallbackQueryHandler
 
 from config import BOT_TOKEN
 from src.controller.button import button_callback
@@ -7,12 +6,10 @@ from src.controller.message import handle_message
 from src.controller.document import handle_document
 
 from src.view.start import start
-from src.parsing.shed import run_scheduler
 from src.controller.sendmess import sendmess
 
 from src.parsing.timechk import time_check
 
-time_check()
 sendmess("Бот запущен")
 
 if __name__ == '__main__':

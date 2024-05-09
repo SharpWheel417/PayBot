@@ -41,6 +41,7 @@ scheduler_thread.start()
 def time_check():
     orders = order.get_timechk()
 
+
     for o in orders:
 
       date_str = o[1].strftime("%Y-%m-%d %H:%M:%S")
@@ -56,5 +57,3 @@ def time_check():
          sendmess_id(id, 'Заказ отменен, вы не успели отправить квитанцию')
          for i in ADMIN:
           sendmess_id(i, f"Заказ {o[0]} отменен\nПользователь не успел отправить квитанцию в течении 10 минут")
-
-    print(orders[0][1])

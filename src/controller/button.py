@@ -1,5 +1,8 @@
-from telegram import Bot, Update, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton
-from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters, CallbackQueryHandler, CallbackContext
+from telegram import Update, InlineKeyboardMarkup
+from telegram.ext import CallbackContext
+
+from datetime import datetime, time
+
 
 import re
 
@@ -31,14 +34,24 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
     ##Если пользователь соглашается с заказом и ценой
     if callback_data == "yes":
         #State заказа переводится в recipt (квитанция)
-        recipt_order(update.effective_user.username)
 
         current_time = datetime.now().time()
 
-        ids = get_order_ids(update.effective_user.username)
-        sum = get_order_sum(update.effective_user.username)
+        start_time = time(22, 0, 0)
+        end_time = time(10, 0, 0)
+        if start_time <= current_time <= end_time:
+            recipt_order(update.effective_chat.id, 'await')
+            ids = get_order_ids(update.effective_chat.id)
+            sum = get_order_sum(update.effective_chat.id)
+            await yes(ids, sum, True, update, context)
+        else:
+            recipt_order(update.effective_chat.id, 'active')
+            ids = get_order_ids(update.effective_chat.id)
+            sum = get_order_sum(update.effective_chat.id)
+            await yes(ids, sum, False, update, context)
 
-        await yes(ids, sum, update, context)
+
+
 
     #Если ппользователь оттказывается от заказа
     if callback_data == "no":

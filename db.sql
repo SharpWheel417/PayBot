@@ -80,7 +80,7 @@ CREATE TABLE "public"."orders" (
     "sum" text NOT NULL,
     "email" text,
     "url" text,
-    "date" date NOT NULL,
+    "date" timestamp NOT NULL,
     "state" text NOT NULL,
     "chat_id" text NOT NULL,
     "ids" text NOT NULL,
@@ -88,15 +88,17 @@ CREATE TABLE "public"."orders" (
     "marje" text,
     "profit" text,
     "status" text,
+    "timechk" text,
     CONSTRAINT "order_pkey" PRIMARY KEY ("id")
 ) WITH (oids = false);
 
-INSERT INTO "orders" ("id", "username", "sum", "email", "url", "date", "state", "chat_id", "ids", "course", "marje", "profit", "status") VALUES
-(1,	'None',	'17499.6',	NULL,	NULL,	'2024-05-06',	'receipt',	'6908096537',	'd785d636-0912-457c-b384-a7129e7f1d1d',	'91.12',	'1.15',	'2282.56',	'cancle'),
-(4,	'None',	'5868.13',	NULL,	NULL,	'2024-05-06',	'receipt',	'6908096537',	'e0c74239-2fbe-4f7b-98d5-861813f97e64',	'91.12',	'1.15',	'765.41',	'request'),
-(2,	'None',	'7963.89',	NULL,	NULL,	'2024-05-06',	'receipt',	'6908096537',	'3d89f977-6d5b-426b-ad6f-b821385cf744',	'91.12',	'1.15',	'1038.77',	'cancle'),
-(5,	'None',	'7020.8',	NULL,	NULL,	'2024-05-06',	'receipt',	'6908096537',	'0d362f24-fbb6-460a-93ad-b4dce240651a',	'91.12',	'1.15',	'915.76',	'request'),
-(3,	'None',	'9430.92',	NULL,	NULL,	'2024-05-06',	'order_complete',	'6908096537',	'729e5eb7-572b-4bd0-a2ce-b88bff258e6f',	'91.12',	'1.15',	'1230.12',	'complete');
+INSERT INTO "orders" ("id", "username", "sum", "email", "url", "date", "state", "chat_id", "ids", "course", "marje", "profit", "status", "timechk") VALUES
+(4,	'None',	'5868.13',	NULL,	NULL,	'2024-05-06 00:00:00',	'receipt',	'6908096537',	'e0c74239-2fbe-4f7b-98d5-861813f97e64',	'91.12',	'1.15',	'765.41',	'request',	NULL),
+(2,	'None',	'7963.89',	NULL,	NULL,	'2024-05-06 00:00:00',	'receipt',	'6908096537',	'3d89f977-6d5b-426b-ad6f-b821385cf744',	'91.12',	'1.15',	'1038.77',	'cancle',	NULL),
+(5,	'None',	'7020.8',	NULL,	NULL,	'2024-05-06 00:00:00',	'receipt',	'6908096537',	'0d362f24-fbb6-460a-93ad-b4dce240651a',	'91.12',	'1.15',	'915.76',	'request',	NULL),
+(1,	'None',	'17499.6',	NULL,	NULL,	'2024-05-06 00:00:00',	'receipt',	'6908096537',	'd785d636-0912-457c-b384-a7129e7f1d1d',	'91.12',	'1.15',	'2282.56',	'cancle',	'cancle'),
+(6,	'satterris',	'5868.13',	NULL,	NULL,	'2024-05-07 00:00:00',	'receipt',	'1063428670',	'1d7f619d-fd85-4540-8761-e4a97a7ba2d5',	'91.12',	'1.15',	'765.41',	'active',	'cancle'),
+(3,	'None',	'9430.92',	NULL,	NULL,	'2024-05-06 00:00:00',	'order_complete',	'6908096537',	'729e5eb7-572b-4bd0-a2ce-b88bff258e6f',	'91.12',	'1.15',	'1230.12',	'complete',	'cancle');
 
 DROP TABLE IF EXISTS "users";
 DROP SEQUENCE IF EXISTS users_id_seq;
@@ -113,9 +115,9 @@ CREATE TABLE "public"."users" (
 ) WITH (oids = false);
 
 INSERT INTO "users" ("id", "username", "chat_id", "state", "full_name", "date") VALUES
-(5,	'satterris',	'1063428670',	'start',	'Анна',	'2024-05-05 19:27:21.30217'),
 (3,	'Summer_Death',	'1194700554',	'await_recipt',	'Gleb Petrov',	NULL),
-(4,	'--Xd Out',	'6908096537',	'order_complete',	'Xd Out',	NULL);
+(4,	'--Xd Out',	'6908096537',	'order_complete',	'Xd Out',	NULL),
+(5,	'satterris',	'1063428670',	'await_recipt',	'Анна',	'2024-05-05 19:27:21.30217');
 
 DROP TABLE IF EXISTS "vars";
 DROP SEQUENCE IF EXISTS vars_id_seq;
@@ -133,6 +135,6 @@ INSERT INTO "vars" ("id", "type", "text") VALUES
 (3,	'phone                                                                                               ',	'+7-913-320-29-81'),
 (4,	'trade_type                                                                                          ',	'Сбербанк'),
 (5,	'marje                                                                                               ',	'1.15'),
-(1,	'course_usd                                                                                          ',	'91.12');
+(1,	'course_usd                                                                                          ',	'91.533666');
 
--- 2024-05-06 11:04:08.553834+00
+-- 2024-05-09 07:30:31.977736+00

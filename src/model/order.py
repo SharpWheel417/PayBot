@@ -217,10 +217,10 @@ order = Order()
 
 
 
-def get_order_ids( username: str) -> str:
+def get_order_ids( chat_id: str) -> str:
     'Берем заказ из БД'
 
-    query = f"SELECT ids FROM orders WHERE username = '{username}'"
+    query = f"SELECT ids FROM orders WHERE chat_id = '{chat_id}'"
     print(query)
     try:
         # Вставьте текущую дату в таблицу "order"
@@ -232,10 +232,10 @@ def get_order_ids( username: str) -> str:
         print("Error:", e)
         return "Error"
 
-def get_order_sum( username: str) -> str:
+def get_order_sum( chat_id: str) -> str:
     'Берем заказ из БД'
 
-    query = f"SELECT sum FROM orders WHERE username = '{username}'"
+    query = f"SELECT sum FROM orders WHERE chat_id = '{chat_id}'"
     print(query)
     try:
         # Вставьте текущую дату в таблицу "order"

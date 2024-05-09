@@ -12,13 +12,21 @@ from src.model.order import order as o
 from config import ADMIN
 
 async def handle_document(update: Update, context: CallbackContext):
+
+
+    order = o.get_active(update.message.chat_id)
+    if o is None:
+        await error_mess("У вас нет активных заказов", update, context)
+        return
+
+
+
     # Получить файл из обновления
     file = update.message.document
 
     # Получить имя файла
     file_name = file.file_name
 
-    order = o.get_active(update.message.chat_id)
 
     new_file_path = os.path.join("static/recipt", str(order['ids']) + ".pdf")
 

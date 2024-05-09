@@ -10,6 +10,9 @@ from src.view.start import start
 from src.parsing.shed import run_scheduler
 from src.controller.sendmess import sendmess
 
+from src.parsing.timechk import time_check
+
+time_check()
 sendmess("Бот запущен")
 
 if __name__ == '__main__':

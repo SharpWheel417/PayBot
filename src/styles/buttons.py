@@ -39,7 +39,7 @@ class Admin():
 
     def admin_buttons(self):
         return ReplyKeyboardMarkup(
-            [['Заказы'], ['Курс', 'Маржа'], ['Калькулятор', 'Статистика']],
+            [['Заказы'], ['Курс', 'Маржа', 'Переменные'], ['Калькулятор', 'Статистика']],
             resize_keyboard=True)
 
     def orders(self):
@@ -50,6 +50,9 @@ class Admin():
 
     def marje(self):
         return ReplyKeyboardMarkup([['Узнать маржу'], ['Изменить маржу'], ['Главное меню']], resize_keyboard=True)
+
+    def vars(self):
+        return ReplyKeyboardMarkup([['Телефон'], ['Способ оплаты'], ['Главное меню']], resize_keyboard=True)
 
     def calculate(self):
         return ReplyKeyboardMarkup([['Рубль в доллары'], ['Доллар в рубль'], ['Главное меню']], resize_keyboard=True)

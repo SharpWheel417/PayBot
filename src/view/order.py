@@ -3,7 +3,7 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, Messa
 import re
 
 from src.model.data import mess
-from src.styles.buttons import yes, no
+from src.styles.buttons import yes, no, user_base
 
 async def order(summ, update: Update, context: ContextTypes.DEFAULT_TYPE):
 
@@ -16,13 +16,13 @@ async def order(summ, update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def complete_order(chat_id: str, update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-    await context.bot.send_message(chat_id=chat_id, text="Заказ успешно выполнен!")
+    await context.bot.send_message(chat_id=chat_id, text="Заказ успешно выполнен!", reply_markup=user_base)
 
 
 async def error_order(chat_id: str, update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-    await context.bot.send_message(chat_id=chat_id, text="К сожалению ваш заказ не получлось выполнить. Деньги вернутся на вашу карту")
+    await context.bot.send_message(chat_id=chat_id, text="К сожалению ваш заказ не получлось выполнить. Деньги вернутся на вашу карту", reply_markup=user_base)
 
 async def cancle_order(chat_id: str, update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-    await context.bot.send_message(chat_id=chat_id, text="К сожалению ваш заказ не получится выполнить")
+    await context.bot.send_message(chat_id=chat_id, text="К сожалению ваш заказ не получится выполнить", reply_markup=user_base)

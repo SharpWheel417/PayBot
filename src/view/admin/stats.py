@@ -58,6 +58,13 @@ class Stats():
 
 
 ###
+### Переменные
+###
+  async def vars(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+      await context.bot.send_message(chat_id=update.effective_chat.id, text="Переменные: ", reply_markup=admin.vars())
+
+
+###
 ### Маржа
 ###
   async def marje(self, update: Update, context: ContextTypes.DEFAULT_TYPE):

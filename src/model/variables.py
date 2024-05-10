@@ -36,8 +36,16 @@ class Vars:
     def phone(self):
         return self.get_vars('phone')
 
+    def set_phone(self, phone:str) -> bool:
+        if self.set_vars(phone, 'phone'):
+            return True
+
     def trade_type(self):
         return self.get_vars('trade_type')
+
+    def set_trade(self, trade:str) -> bool:
+        if self.set_vars(trade, 'trade_type'):
+            return True
 
     def usd(self):
         return self.get_vars('course_usd')

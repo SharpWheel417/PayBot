@@ -178,13 +178,26 @@ class Order:
             print("Error:", e)
             return []
 
+
+    def get_sum(self, ids):
+        query = f"SELECT sum FROM orders WHERE ids = '{ids}'"
+        try:
+            # Вставьте текущую дату в таблицу "order"
+            cur.execute(query)
+            result = cur.fetchall()
+            return result[0][0]
+        except Exception as e:
+            conn.rollback()
+            print("Error:", e)
+            return "Error"
+
     ###
     ### Заказы в работе
     ###
     def in_work(self):
         'Получаем список заказов вработе'
         ##TODO Хз какой статус поставить
-        return self.get_orders('work')
+        return self.get_orders('active')
 
     ###
     ### Заказы в запросе

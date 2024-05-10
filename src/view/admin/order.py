@@ -13,9 +13,11 @@ async def apply_order(update: Update, context: ContextTypes.DEFAULT_TYPE):
   colon_index = text.index(":")
   ids = text[colon_index + 1:].split("\n")[0].strip()
 
+  sum = order.get_sum(ids)
+
   txt = mess("yes").format(
       phone=v.phone(),
-      trade_type="Сбербанк",
+      trade_type=v.trade_type(),
       sum=sum,
       ids=ids
       )

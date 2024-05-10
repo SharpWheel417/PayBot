@@ -47,7 +47,7 @@ def time_check():
       date_str = o[1].strftime("%Y-%m-%d %H:%M:%S")
       date_obj = datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
 
-      updated_date = date_obj + timedelta(minutes=10)
+      updated_date = date_obj + timedelta(minutes=15)
 
       if datetime.now() >= updated_date:
          order.set_timechk('cancle', o[0])

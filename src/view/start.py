@@ -21,6 +21,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     ### Админ ###
     if user_id in ADMIN:
+        user.add_new_user(user_id, username, user_fio)
         #admin panel
         await context.bot.send_message(chat_id=update.effective_chat.id, text="Привет админ!", reply_markup=admin.admin_buttons())
 

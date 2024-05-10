@@ -21,7 +21,7 @@ async def admin_way(text, update: Update, context: ContextTypes.DEFAULT_TYPE):
 
   if text == 'В работе':
     orders = order.in_work()
-    await stats.orders_print(orders, 'work', update, context)
+    await stats.orders_print(orders, 'active', update, context)
 
   if text == 'Заявки':
     orders = order.requests()
@@ -89,6 +89,44 @@ async def admin_way(text, update: Update, context: ContextTypes.DEFAULT_TYPE):
     v.set_marje((float(text)+100)/100)
     await stats.check_marje("Марже изменена: "+v.marje()+"", update, context)
     user.state('', update.effective_chat.id)
+
+
+
+  ###
+  ### Админ переходит в меню с переменными
+  ###
+  if text == 'Переменные':
+    await stats.vars(update, context)
+
+### Число
+### Админ изменяет телефон
+###
+  if user.get_state(update.effective_chat.id) == 'change_phone':
+    v.set_phone(text)
+    await stats.check_marje("Телефон изменен: "+v.phone()+"", update, context)
+    user.state('', update.effective_chat.id)
+  ###
+  ### Админу переходит в ввод телефона
+  ###
+  if text == 'Телефон':
+    user.state('change_phone', update.effective_chat.id)
+    await stats.check_marje("Введите новый номер телефона", update, context)
+
+  ### Число
+### Админ изменяет телефон
+###
+  if user.get_state(update.effective_chat.id) == 'change_trade_type':
+    v.set_trade(text)
+    await stats.check_marje("Метод оплаты изменен: "+v.trade_type()+"", update, context)
+    user.state('', update.effective_chat.id)
+
+  ###
+  ### Админ хочет изменить маржу
+  ###
+  if text == 'Способ оплаты':
+    user.state('change_trade_type', update.effective_chat.id)
+    await stats.check_marje("Введите новый способ оплаты", update, context)
+
 
 
   ############ КАЛЬКУЛЯТОР ###############

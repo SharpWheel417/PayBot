@@ -34,21 +34,11 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
     ##Если пользователь соглашается с заказом и ценой
     if callback_data == "yes":
         #State заказа переводится в recipt (квитанция)
-
-        current_time = datetime.now().time()
-
-        start_time = time(22, 0, 0)
-        end_time = time(10, 0, 0)
-        if start_time <= current_time <= end_time:
-            recipt_order(update.effective_chat.id, 'await')
-            ids = get_order_ids(update.effective_chat.id)
-            sum = get_order_sum(update.effective_chat.id)
-            await yes(ids, sum, True, update, context)
-        else:
-            recipt_order(update.effective_chat.id, 'active')
-            ids = get_order_ids(update.effective_chat.id)
-            sum = get_order_sum(update.effective_chat.id)
-            await yes(ids, sum, False, update, context)
+        recipt_order(update.effective_chat.id, 'active')
+        ids = get_order_ids(update.effective_chat.id)
+        sum = get_order_sum(update.effective_chat.id)
+        await remove_buttons(update, context)
+        await yes(ids, sum, update, context)
 
 
 
@@ -70,7 +60,7 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
 
         o.state('await_recipt', order_id)
         u.state('await_recipt', update.effective_chat.id)
-        o.status('work', order_id)
+        o.status('active', order_id)
 
         await apply_order(update, context)
 

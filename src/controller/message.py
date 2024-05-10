@@ -15,6 +15,8 @@ from src.controller.admin import admin_way
 from src.model.variables import v
 from src.model.user import user as u
 
+from src.view.error import error_mess
+
 email_regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
 url_regex = r'(https?://[^\s]+)'
 
@@ -41,11 +43,15 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             except Exception as e:
                 print(e)
 
-            if email and url:
-                if order.email_url(email, url, update.effective_chat.id):
-                    await aEmail(email, url, update, context)
-                    u.state("await_close_order", update.message.chat_id)
-                    await came_email(update, context)
+            try:
+                if email and url:
+                    if order.email_url(email, url, update.effective_chat.id):
+                        await aEmail(email, url, update, context)
+                        u.state("await_close_order", update.message.chat_id)
+                        await came_email(update, context)
+            except Exception as e:
+                await error_mess("Вы должны отправить email и ссылку одинм сообщением", update, context)
+                
 
         ########################
 

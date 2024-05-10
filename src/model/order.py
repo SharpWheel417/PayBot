@@ -39,6 +39,18 @@ class Order:
             conn.rollback()
             print("Error:", e)
             return "Error"
+        
+    def get_sum(self, ids):
+        query = f"SELECT sum FROM orders WHERE ids = '{ids}'"
+        try:
+            # Вставьте текущую дату в таблицу "order"
+            cur.execute(query)
+            result = cur.fetchall()
+            return result[0][0]
+        except Exception as e:
+            conn.rollback()
+            print("Error:", e)
+            return "Error"
 
     def check(self, chat_id) -> bool:
         '''
@@ -55,7 +67,7 @@ class Order:
             print("Error:", e)
             return "Error"
 
-    def get_active(self, chat_id: str):
+    def  get_active(self, chat_id: str):
         query = f"SELECT ids, date, sum, timechk FROM orders WHERE chat_id = '{chat_id}' AND status = 'active'"
         try:
             cur.execute(query)

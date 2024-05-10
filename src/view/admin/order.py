@@ -12,6 +12,8 @@ async def apply_order(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
   colon_index = text.index(":")
   ids = text[colon_index + 1:].split("\n")[0].strip()
+  
+  sum = order.get_sum(ids)
 
   sum = order.get_sum(ids)
 

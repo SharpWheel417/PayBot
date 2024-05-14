@@ -1,0 +1,1348 @@
+Подключение к базе данных успешно
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+91.990432
+Message sent successfully
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '1194700554'
+Ошибка получения state юзера: list index out of range
+611660794
+Проверяем, существет ли пользователь 611660794
+Новый пользователь добавлен
+Подключение к базе данных успешно
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+91.984019
+Message sent successfully
+611660794
+Проверяем, существет ли пользователь 611660794
+Пользователь с таким chat_id уже существует
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+UPDATE users SET state = 'usd_to_rub' WHERE chat_id = '611660794'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+UPDATE users SET state = '' WHERE chat_id = '611660794'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+SELECT state FROM users WHERE chat_id = '611660794'
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.723491
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.723491
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.004895
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.004895
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.016523
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.016523
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.353182
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.353182
+516049165
+Проверяем, существет ли пользователь 516049165
+Новый пользователь добавлен
+UPDATE users SET state = 'await_sum' WHERE chat_id = '516049165'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '516049165'
+False
+Error: '<' not supported between instances of 'NoneType' and 'int'
+INSERT INTO orders (id, ids, username, chat_id, sum, course, profit, marje, date, state, status, timechk) VALUES (1, 'ce6a647d-5a58-4ec4-9815-a445842d2357','dok_qq', '516049165', 1593.09, 92.353182, 207.79, 1.15, '2024-05-10 22:06:10.128488', 'query', 'request', 'start')
+Заказ создан
+UPDATE orders SET state = 'receipt', status='active' WHERE chat_id = '516049165'
+Заказ отменен
+SELECT ids FROM orders WHERE chat_id = '516049165'
+SELECT sum FROM orders WHERE chat_id = '516049165'
+UPDATE orders SET state = 'await_recipt' WHERE ids = 'ce6a647d-5a58-4ec4-9815-a445842d2357'
+Квитанция принята
+UPDATE users SET state = 'await_recipt' WHERE chat_id = '611660794'
+ State usera обновлен
+UPDATE orders SET status = 'active' WHERE ids = 'ce6a647d-5a58-4ec4-9815-a445842d2357'
+Статус заказа изменен на:  active
+SELECT chat_id FROM orders WHERE ids = 'ce6a647d-5a58-4ec4-9815-a445842d2357'
+Время проверки изменено
+SELECT chat_id FROM orders WHERE ids = 'ce6a647d-5a58-4ec4-9815-a445842d2357'
+UPDATE orders SET status = 'cancle' WHERE ids = 'ce6a647d-5a58-4ec4-9815-a445842d2357'
+Статус заказа изменен на:  cancle
+Message sent successfully
+Message sent successfully
+Message sent successfully
+Message sent successfully
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.861413
+парсим
+Exception in thread Thread-2 (run_scheduler):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/root/PayBot/src/parsing/timechk.py", line 23, in run_scheduler
+    schedule.run_pending()
+  File "/usr/local/lib/python3.10/dist-packages/schedule/__init__.py", line 822, in run_pending
+    default_scheduler.run_pending()
+  File "/usr/local/lib/python3.10/dist-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+  File "/usr/local/lib/python3.10/dist-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+  File "/usr/local/lib/python3.10/dist-packages/schedule/__init__.py", line 693, in run
+    ret = self.job_func()
+  File "/root/PayBot/src/parsing/timechk.py", line 19, in <lambda>
+    schedule.every(1).minute.do(lambda: run_with_lock(lambda: time_check(), arg=True))
+  File "/root/PayBot/src/parsing/timechk.py", line 28, in run_with_lock
+    func()
+  File "/root/PayBot/src/parsing/timechk.py", line 19, in <lambda>
+    schedule.every(1).minute.do(lambda: run_with_lock(lambda: time_check(), arg=True))
+  File "/root/PayBot/src/parsing/timechk.py", line 45, in time_check
+    for o in orders:
+TypeError: 'NoneType' object is not iterable
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.861413
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.251506
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.417007
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.417007
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.190597
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.188179
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.188179
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.176852
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.174426
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.174426
+UPDATE orders SET state = 'await_recipt' WHERE ids = 'ce6a647d-5a58-4ec4-9815-a445842d2357'
+Квитанция принята
+UPDATE users SET state = 'await_recipt' WHERE chat_id = '-4181748266'
+ State usera обновлен
+UPDATE orders SET status = 'active' WHERE ids = 'ce6a647d-5a58-4ec4-9815-a445842d2357'
+Статус заказа изменен на:  active
+SELECT chat_id FROM orders WHERE ids = 'ce6a647d-5a58-4ec4-9815-a445842d2357'
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.176042
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.174747
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.174747
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.254748
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.254748
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.170736
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.270789
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.270789
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.172915
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.173047
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.173047
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.173999
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.173394
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.173394
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.173866
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.145787
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.145787
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.153823
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Error: no results to fetch
+Message sent successfully
+Курс установлен:  92.153823
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.141583
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.149362
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.152906
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.153382
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.148157
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.152744
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.15336
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.153443
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.153454
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.141506
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.135085
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.15099
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.153125
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.153411
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.15345
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.153455
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.153455
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.307311
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.386062
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.396632
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.489575
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.53882
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.519799
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.365618
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.30065
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.304854
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+/root/PayBot/src/controller/document.py:55: RuntimeWarning: coroutine 'Message.reply_text' was never awaited
+  update.message.reply_text(f'Файл был отправлен пользователю')
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/telegram/ext/_application.py", line 1277, in process_update
+    await coroutine
+  File "/usr/local/lib/python3.10/dist-packages/telegram/ext/_handlers/basehandler.py", line 157, in handle_update
+    return await self.callback(update, context)
+  File "/root/PayBot/src/controller/message.py", line 68, in handle_message
+    summ = round((int(text) * usd),2)
+ValueError: invalid literal for int() with base 10: 'Ввести свою сумму'
+No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/telegram/ext/_application.py", line 1277, in process_update
+    await coroutine
+  File "/usr/local/lib/python3.10/dist-packages/telegram/ext/_handlers/basehandler.py", line 157, in handle_update
+    return await self.callback(update, context)
+  File "/root/PayBot/src/controller/message.py", line 28, in handle_message
+    await admin_way(text, update, context)
+  File "/root/PayBot/src/controller/admin.py", line 24, in admin_way
+    await stats.orders_print(orders, 'active', update, context)
+  File "/root/PayBot/src/view/admin/stats.py", line 36, in orders_print
+    await context.bot.send_message(chat_id=update.effective_chat.id, text=f"ID заказа: {row[8]}\n Суммна: {row[2]}  Date: {row[3]}", reply_markup=btn)
+UnboundLocalError: local variable 'btn' referenced before assignment
+Message sent successfully
+Курс установлен:  92.250674
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.291663
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.18072
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.17269
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.176065
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.174963
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  90.980907
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  90.956105
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  90.934322
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  90.932826
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  90.930149
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.820238
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.201983
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.176276
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  92.126563
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.842857
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.744984
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.434502
+5595592521
+Проверяем, существет ли пользователь 5595592521
+Новый пользователь добавлен
+UPDATE users SET state = 'await_sum' WHERE chat_id = '5595592521'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '5595592521'
+False
+INSERT INTO orders (id, ids, username, chat_id, sum, course, profit, marje, date, state, status, timechk) VALUES (2, 'b10864b5-41da-4965-878c-5d2c986ca0a3','Marllosh', '5595592521', 3680.24, 91.434502, 480.03, 1.15, '2024-05-13 12:58:06.689169', 'query', 'request', 'start')
+Заказ создан
+UPDATE orders SET state = 'receipt', status='active' WHERE chat_id = '5595592521'
+Заказ отменен
+SELECT ids FROM orders WHERE chat_id = '5595592521'
+SELECT sum FROM orders WHERE chat_id = '5595592521'
+UPDATE orders SET state = 'await_recipt' WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+Квитанция принята
+UPDATE users SET state = 'await_recipt' WHERE chat_id = '611660794'
+ State usera обновлен
+UPDATE orders SET status = 'active' WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+Статус заказа изменен на:  active
+SELECT chat_id FROM orders WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+UPDATE orders SET state = 'await_recipt' WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+Квитанция принята
+UPDATE users SET state = 'await_recipt' WHERE chat_id = '-4181748266'
+ State usera обновлен
+UPDATE orders SET status = 'active' WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+Статус заказа изменен на:  active
+SELECT chat_id FROM orders WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+UPDATE users SET state = 'await_email_url' WHERE chat_id = '5595592521'
+ State usera обновлен
+UPDATE orders SET state = 'apply_recipt' WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+Квитанция принята
+SELECT chat_id FROM orders WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+UPDATE users SET state = 'await_email_url' WHERE chat_id = '5595592521'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '5595592521'
+'NoneType' object has no attribute 'group'
+SELECT state FROM users WHERE chat_id = '5595592521'
+'NoneType' object has no attribute 'group'
+SELECT state FROM users WHERE chat_id = '5595592521'
+UPDATE orders SET email = 'Andtey@gmail.com', url = 'https://youtube.com/shorts/A24wrlv9T7o?si=B0dHqySaWMlV1k5x' WHERE chat_id = '5595592521' AND status = 'active'
+email and url занесены в БД
+UPDATE users SET state = 'await_close_order' WHERE chat_id = '5595592521'
+ State usera обновлен
+SELECT chat_id FROM orders WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+UPDATE users SET state = 'order_complete' WHERE chat_id = '5595592521'
+ State usera обновлен
+UPDATE orders SET state = 'order_complete' WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+Квитанция принята
+UPDATE orders SET status = 'complete' WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+Статус заказа изменен на:  complete
+5595592521
+Проверяем, существет ли пользователь 5595592521
+Пользователь с таким chat_id уже существует
+UPDATE users SET state = 'await_sum' WHERE chat_id = '5595592521'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '5595592521'
+False
+SELECT state FROM users WHERE chat_id = '5595592521'
+False
+INSERT INTO orders (id, ids, username, chat_id, sum, course, profit, marje, date, state, status, timechk) VALUES (3, '3466001f-5764-4711-87e4-623ff36c0441','Marllosh', '5595592521', 2102.99, 91.434502, 274.3, 1.15, '2024-05-13 13:06:39.330075', 'query', 'request', 'start')
+Заказ создан
+UPDATE orders SET state = 'cancel' WHERE username = '5595592521'
+Заказ отменен
+5595592521
+Проверяем, существет ли пользователь 5595592521
+Пользователь с таким chat_id уже существует
+UPDATE users SET state = 'await_sum' WHERE chat_id = '5595592521'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT * FROM orders WHERE status = 'active'
+SELECT * FROM orders WHERE status = 'request'
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT chat_id FROM orders WHERE ids = '3466001f-5764-4711-87e4-623ff36c0441'
+UPDATE orders SET status = 'cancle' WHERE ids = '3466001f-5764-4711-87e4-623ff36c0441'
+Статус заказа изменен на:  cancle
+SELECT * FROM orders WHERE status = 'cancle'
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT * FROM orders WHERE status = 'complete'
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT chat_id FROM orders WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+UPDATE users SET state = 'order_complete' WHERE chat_id = '5595592521'
+ State usera обновлен
+UPDATE orders SET state = 'order_complete' WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+Квитанция принята
+UPDATE orders SET status = 'complete' WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+Статус заказа изменен на:  complete
+SELECT * FROM orders WHERE status = 'complete'
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+5595592521
+Проверяем, существет ли пользователь 5595592521
+Пользователь с таким chat_id уже существует
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+UPDATE users SET state = 'await_sum' WHERE chat_id = '5595592521'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+UPDATE users SET state = 'change_marje' WHERE chat_id = '-4181748266'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+UPDATE users SET state = 'change_marje' WHERE chat_id = '-4181748266'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+UPDATE users SET state = 'change_marje' WHERE chat_id = '-4181748266'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+UPDATE users SET state = 'change_phone' WHERE chat_id = '-4181748266'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+Время проверки изменено
+SELECT chat_id FROM orders WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+UPDATE orders SET status = 'cancle' WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+Статус заказа изменен на:  cancle
+Message sent successfully
+Message sent successfully
+Message sent successfully
+Message sent successfully
+6908096537
+Проверяем, существет ли пользователь 6908096537
+Новый пользователь добавлен
+UPDATE users SET state = 'await_sum' WHERE chat_id = '6908096537'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '6908096537'
+False
+INSERT INTO orders (id, ids, username, chat_id, sum, course, profit, marje, date, state, status, timechk) VALUES (4, 'b61b0938-6b73-42ae-b24b-d7bb9830ac11','None', '6908096537', 3680.24, 91.434502, 480.03, 1.15, '2024-05-13 13:16:52.489753', 'query', 'request', 'start')
+Заказ создан
+UPDATE orders SET state = 'receipt', status='active' WHERE chat_id = '6908096537'
+Заказ отменен
+SELECT ids FROM orders WHERE chat_id = '6908096537'
+SELECT sum FROM orders WHERE chat_id = '6908096537'
+Время проверки изменено
+SELECT chat_id FROM orders WHERE ids = '3466001f-5764-4711-87e4-623ff36c0441'
+UPDATE orders SET status = 'cancle' WHERE ids = '3466001f-5764-4711-87e4-623ff36c0441'
+Статус заказа изменен на:  cancle
+Message sent successfully
+Message sent successfully
+Message sent successfully
+Message sent successfully
+5595592521
+Проверяем, существет ли пользователь 5595592521
+Пользователь с таким chat_id уже существует
+UPDATE users SET state = 'await_sum' WHERE chat_id = '5595592521'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '5595592521'
+False
+INSERT INTO orders (id, ids, username, chat_id, sum, course, profit, marje, date, state, status, timechk) VALUES (5, 'eaf3acff-1fdc-4357-ae98-ea5ef8dc56e4','Marllosh', '5595592521', 1051.5, 91.434502, 137.15, 1.15, '2024-05-13 13:22:57.029808', 'query', 'request', 'start')
+Заказ создан
+UPDATE orders SET state = 'receipt', status='active' WHERE chat_id = '5595592521'
+Заказ отменен
+SELECT ids FROM orders WHERE chat_id = '5595592521'
+SELECT sum FROM orders WHERE chat_id = '5595592521'
+UPDATE orders SET state = 'await_recipt' WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+Квитанция принята
+UPDATE users SET state = 'await_recipt' WHERE chat_id = '611660794'
+ State usera обновлен
+UPDATE orders SET status = 'active' WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+Статус заказа изменен на:  active
+SELECT chat_id FROM orders WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+5595592521
+Проверяем, существет ли пользователь 5595592521
+Пользователь с таким chat_id уже существует
+UPDATE users SET state = 'await_sum' WHERE chat_id = '5595592521'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '5595592521'
+True
+UPDATE orders SET state = 'await_recipt' WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+Квитанция принята
+UPDATE users SET state = 'await_recipt' WHERE chat_id = '-4181748266'
+ State usera обновлен
+UPDATE orders SET status = 'active' WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+Статус заказа изменен на:  active
+SELECT chat_id FROM orders WHERE ids = 'b10864b5-41da-4965-878c-5d2c986ca0a3'
+UPDATE orders SET state = 'await_recipt' WHERE ids = 'b61b0938-6b73-42ae-b24b-d7bb9830ac11'
+Квитанция принята
+UPDATE users SET state = 'await_recipt' WHERE chat_id = '-4181748266'
+ State usera обновлен
+UPDATE orders SET status = 'active' WHERE ids = 'b61b0938-6b73-42ae-b24b-d7bb9830ac11'
+Статус заказа изменен на:  active
+SELECT chat_id FROM orders WHERE ids = 'b61b0938-6b73-42ae-b24b-d7bb9830ac11'
+6908096537
+Проверяем, существет ли пользователь 6908096537
+Пользователь с таким chat_id уже существует
+UPDATE users SET state = 'await_sum' WHERE chat_id = '6908096537'
+ State usera обновлен
+Время проверки изменено
+SELECT chat_id FROM orders WHERE ids = 'b61b0938-6b73-42ae-b24b-d7bb9830ac11'
+UPDATE orders SET status = 'cancle' WHERE ids = 'b61b0938-6b73-42ae-b24b-d7bb9830ac11'
+Статус заказа изменен на:  cancle
+Message sent successfully
+Message sent successfully
+Message sent successfully
+Message sent successfully
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+UPDATE users SET state = 'change_phone' WHERE chat_id = '-4181748266'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+Время проверки изменено
+SELECT chat_id FROM orders WHERE ids = 'eaf3acff-1fdc-4357-ae98-ea5ef8dc56e4'
+UPDATE orders SET status = 'cancle' WHERE ids = 'eaf3acff-1fdc-4357-ae98-ea5ef8dc56e4'
+Статус заказа изменен на:  cancle
+Message sent successfully
+Message sent successfully
+Message sent successfully
+Message sent successfully
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+UPDATE users SET state = 'change_trade_type' WHERE chat_id = '-4181748266'
+ State usera обновлен
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/telegram/ext/_application.py", line 1277, in process_update
+    await coroutine
+  File "/usr/local/lib/python3.10/dist-packages/telegram/ext/_handlers/basehandler.py", line 157, in handle_update
+    return await self.callback(update, context)
+  File "/root/PayBot/src/controller/message.py", line 28, in handle_message
+    await admin_way(text, update, context)
+  File "/root/PayBot/src/controller/admin.py", line 24, in admin_way
+    await stats.orders_print(orders, 'active', update, context)
+  File "/root/PayBot/src/view/admin/stats.py", line 36, in orders_print
+    await context.bot.send_message(chat_id=update.effective_chat.id, text=f"ID заказа: {row[8]}\n Суммна: {row[2]}  Date: {row[3]}", reply_markup=btn)
+UnboundLocalError: local variable 'btn' referenced before assignment
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT * FROM orders WHERE status = 'active'
+SELECT * FROM orders WHERE status = 'request'
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT * FROM orders WHERE status = 'complete'
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT * FROM orders WHERE status = 'cancle'
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT * FROM orders WHERE status = 'cancle'
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT * FROM orders WHERE status = 'complete'
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+SELECT state FROM users WHERE chat_id = '-4181748266'
+Ошибка получения state юзера: list index out of range
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.486994
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.481959
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.552526
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.216062
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.239546
+парсим
+1 USD to RUB - US Dollars to Russian Rubles Exchange Rate
+Message sent successfully
+Курс установлен:  91.345234
+парсим

@@ -9,9 +9,9 @@ from src.model.variables import v
 def parsing():
     course = get_currency()
     if course != 'Error':
-        if v.set_usd(course):
-            sendmess("Курс взят: "+str(course)+"")
-            print("Курс установлен: ", course)
+        v.set_usd(course)
+        sendmess("Курс взят: "+str(course)+"")
+        print("Курс установлен: ", course)
 
     else:
         sendmess("Ошибка получения курса: "+course)
@@ -23,7 +23,7 @@ def get_currency() -> float:
     Функция получает текущую валюту на веб-странице.
     :return: текущая валюта в виде строки, либо 'error' в случае ошибки
     """
-
+    print("парсим")
     try:
         # Создаем экземпляр WebDriver с использованием Chrome
         chrome_options = Options()
@@ -56,4 +56,4 @@ def get_currency() -> float:
         print(f"An error occurred: {e}")
         return 'error'
 
-# print(get_currency())
+print(get_currency())

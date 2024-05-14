@@ -69,7 +69,7 @@ ID заказа: {ids}
 Бот оплачивает сервисы с валютой $.
 Пожалуйста, убедитесь, что в сервисе выполняется покупка именно в указанной вами валюте. '),
 (12,	'await_admin',	'Ожидайте, пока оператор обрабатывает ваш заказ'),
-(19,	'user_came_email',	'Квитанция получено
+(19,	'user_came_email',	'Ссылка и почта получены
 
 Подождите, пока оператор обрабатывает квитанцию');
 
@@ -95,6 +95,10 @@ CREATE TABLE "public"."orders" (
     CONSTRAINT "order_pkey" PRIMARY KEY ("id")
 ) WITH (oids = false);
 
+INSERT INTO "orders" ("id", "username", "sum", "email", "url", "date", "state", "chat_id", "ids", "course", "marje", "profit", "status", "timechk") VALUES
+(1,	'None',	'2436.0',	NULL,	NULL,	'2024-05-14 16:31:18.350337',	'cancle',	'6908096537',	'93b2a496-a7f0-4003-844a-3c682fb73ffe',	'145.0',	'1.12',	'261.0',	'cancle',	'cancle'),
+(2,	'None',	'5684.0',	'xd@gmail.com',	'https://vk.com',	'2024-05-14 16:31:51.765646',	'order_complete',	'6908096537',	'31c155e3-a9b1-4dd8-95d2-318d46af5352',	'145.0',	'1.12',	'609.0',	'complete',	'complete'),
+(3,	'None',	'4872.0',	'gk@gmail.com',	'https://youtube.com',	'2024-05-14 16:33:19.64134',	'order_complete',	'6908096537',	'a7ba500c-c36a-458d-b0ee-c4ed0126c993',	'145.0',	'1.12',	'522.0',	'complete',	'complete');
 
 DROP TABLE IF EXISTS "users";
 DROP SEQUENCE IF EXISTS users_id_seq;
@@ -110,6 +114,10 @@ CREATE TABLE "public"."users" (
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 ) WITH (oids = false);
 
+INSERT INTO "users" ("id", "username", "chat_id", "state", "full_name", "date") VALUES
+(2,	'chat',	'-4181748266',	'',	'Chat Logging',	NULL),
+(1,	'Summer_Death',	'1194700554',	'await_recipt',	'Gleb Petrov',	'2024-05-14 14:31:21.068361'),
+(3,	'--Xd Out',	'6908096537',	'order_complete',	'Xd Out',	'2024-05-14 14:49:25.736372');
 
 DROP TABLE IF EXISTS "vars";
 DROP SEQUENCE IF EXISTS vars_id_seq;
@@ -123,9 +131,9 @@ CREATE TABLE "public"."vars" (
 ) WITH (oids = false);
 
 INSERT INTO "vars" ("id", "type", "text") VALUES
-(5,	'marje                                                                                               ',	'1.15'),
-(1,	'course_usd                                                                                          ',	'91.533666'),
 (3,	'phone                                                                                               ',	'42332'),
-(4,	'trade_type                                                                                          ',	'3r42rewfd');
+(4,	'trade_type                                                                                          ',	'3r42rewfd'),
+(5,	'marje                                                                                               ',	'1.12'),
+(1,	'course_usd                                                                                          ',	'145.0');
 
--- 2024-05-10 13:40:23.765201+00
+-- 2024-05-14 09:36:13.55009+00

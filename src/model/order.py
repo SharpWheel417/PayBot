@@ -260,7 +260,7 @@ order = Order()
 def get_order_ids( chat_id: str) -> str:
     'Берем заказ из БД'
 
-    query = f"SELECT ids FROM orders WHERE chat_id = '{chat_id}'"
+    query = f"SELECT ids FROM orders WHERE chat_id = '{chat_id}' AND state = 'query'"
     print(query)
     try:
         # Вставьте текущую дату в таблицу "order"
@@ -304,10 +304,10 @@ def get_order_state( username: str) -> str:
 
 
 
-def close_order(username: str):
+def close_order(chat_id: str):
     'Обновляем заказ в БД'
 
-    query = f"UPDATE orders SET state = 'cancel' WHERE username = '{username}'"
+    query = f"DELETE FROM orders WHERE chat_id = '{chat_id}' AND state='query' "
     print(query)
     try:
         cur.execute(query)
@@ -318,10 +318,10 @@ def close_order(username: str):
         print("Error:", e)
 
 
-def recipt_order(chat_id: str, status: str):
+def recipt_order(ids: str, status: str):
     'Обновляем заказ в БД'
 
-    query = f"UPDATE orders SET state = 'receipt', status='{status}' WHERE chat_id = '{chat_id}'"
+    query = f"UPDATE orders SET state = 'request', status='{status}' WHERE chat_id = '{ids}', state = 'query'"
     print(query)
     try:
         cur.execute(query)

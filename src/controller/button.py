@@ -43,6 +43,7 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
     #Если ппользователь оттказывается от заказа
     if callback_data == "no":
         close_order(update.effective_chat.id)
+        await remove_buttons(update, context)
         await no(update, context)
 
 
@@ -70,6 +71,8 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
         chat_id = o.chat_id(ids)
         # Удалить кнопки после обработки
         o.status('cancle', ids)
+        o.state('cancle', ids)
+        o.set_timechk('cancle', ids)
         await admin_cancel_order(update, context)
         #Сообщение об отмене заказа для пользователя
         await u_cancle_order(chat_id, update, context)
@@ -78,10 +81,11 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
 
     ##Подтверждение квитанции
     if callback_data == "apply_recipt":
-        ##Название файла
-        file_name = query.message.document.file_name
-        ## IDS заказа
-        ids = file_name.split(".pdf")[0]
+
+        text = query.message.text
+        ids = re.search(pattern, text).group()
+        ids = ids.replace("ID заказа: ", "")
+
         ## Обновляем state в БД
         if o.state("apply_recipt", ids):
             chat_id = o.chat_id(ids)

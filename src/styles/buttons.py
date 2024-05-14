@@ -1,7 +1,7 @@
 from telegram import ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
 
 
-user_base = ReplyKeyboardMarkup([['10', '15', '20'], ['25', '30', '35'], ['Ввести свою сумму']], resize_keyboard=True)
+user_base = ReplyKeyboardMarkup([['$10', '$15', '$20'], ['$24', '$30', '$35'], ['Ввести свою сумму']], resize_keyboard=True)
 
 
 #Кнопка "Оплатить покупку"

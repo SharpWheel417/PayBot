@@ -60,13 +60,14 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ### Пользователь ввел сумму
         ###
         else:
+            txt = text.replace('$', '')
             ##Проверяем, есть ли у пользователя активный заказ
             check = order.check(update.effective_chat.id)
             if not check:
                 usd = float(v.usd())
                 marje = float(v.marje())
                 ## Переводим доллары в рубли
-                summ = round((int(text) * usd),2)
+                summ = round((int(txt) * usd),2)
                 ## Плюсуем маржу
                 result = round((summ*marje),2)
 

@@ -36,7 +36,6 @@ class Admin():
     def __init__(self) -> None:
         pass
 
-
     def admin_buttons(self):
         return ReplyKeyboardMarkup(
             [['Заказы'], ['Курс', 'Маржа', 'Переменные'], ['Калькулятор', 'Статистика']],

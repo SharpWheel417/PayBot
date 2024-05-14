@@ -1,5 +1,5 @@
 import datetime
-
+from src.controller.sendmess import sendmess
 from src.model.connect import cur, conn
 
 
@@ -7,7 +7,7 @@ class User():
 
     def __init__(self):
         pass
-    
+
     def get_state(self, chat_id):
         'Получаем state пользователя'
         query = f"SELECT state FROM users WHERE chat_id = '{chat_id}'"
@@ -19,13 +19,14 @@ class User():
         except Exception as e:
             conn.rollback()
             print("Ошибка получения state юзера:", e)
-            
+            # sendmess("Ошибка. Попробуйте выполнить команду /start")
+
     def state(self, state: str, chat_id: str) -> bool:
         '''
             Обновляем state пользователя
             Если поставить пустой username, то обновляем state по chat_id
         '''
-        query = f"UPDATE users SET state = '{state}' WHERE chat_id = '{chat_id}'"   
+        query = f"UPDATE users SET state = '{state}' WHERE chat_id = '{chat_id}'"
         print(query)
         try:
             cur.execute(query)
@@ -36,10 +37,10 @@ class User():
             conn.rollback()
             print("Ошибка обновления стейта юзера:", e)
             return False
-        
-        
+
+
 user = User()
-        
+
 
 def add_new_user(chat_id, name, first_name) -> None:
     'Добавляем пользователя в бд нового пользователя'

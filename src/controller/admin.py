@@ -47,10 +47,6 @@ async def admin_way(text, update: Update, context: ContextTypes.DEFAULT_TYPE):
   if text == 'Узнать курс':
     await stats.check_course(""+v.usd()+" руб.", update, context)
 
-  if text == 'Изменить курс':
-    user.state('change_course', update.effective_chat.id)
-    await stats.change_course(update, context)
-
 ### Число
 ### Админ изменяет курс
 ###
@@ -58,6 +54,11 @@ async def admin_way(text, update: Update, context: ContextTypes.DEFAULT_TYPE):
     v.set_usd(float(text))
     await stats.check_course("Курс изменен: "+v.usd()+" руб.", update, context)
     user.state('', update.effective_chat.id)
+
+  if text == 'Изменить курс':
+    user.state('change_course', update.effective_chat.id)
+    await stats.change_course(update, context)
+
 
 
 ############# МАРЖА ############
@@ -75,13 +76,6 @@ async def admin_way(text, update: Update, context: ContextTypes.DEFAULT_TYPE):
   if text == 'Узнать маржу':
     await stats.check_marje("Маржа: "+v.marje()+"", update, context)
 
-  ###
-  ### Админ хочет изменить маржу
-  ###
-  if text == 'Изменить маржу':
-    user.state('change_marje', update.effective_chat.id)
-    await stats.change_marje(update, context)
-
 ### Число
 ### Админ изменяет маржу
 ###
@@ -89,6 +83,14 @@ async def admin_way(text, update: Update, context: ContextTypes.DEFAULT_TYPE):
     v.set_marje((float(text)+100)/100)
     await stats.check_marje("Марже изменена: "+v.marje()+"", update, context)
     user.state('', update.effective_chat.id)
+
+  ###
+  ### Админ хочет изменить маржу
+  ###
+  if text == 'Изменить маржу':
+    user.state('change_marje', update.effective_chat.id)
+    await stats.change_marje(update, context)
+
 
 
 

@@ -56,4 +56,4 @@ def get_currency() -> float:
         print(f"An error occurred: {e}")
         return 'error'
 
-print(get_currency())
+# print(get_currency())

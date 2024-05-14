@@ -34,14 +34,11 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
     ##Если пользователь соглашается с заказом и ценой
     if callback_data == "yes":
         #State заказа переводится в recipt (квитанция)
-        recipt_order(update.effective_chat.id, 'active')
+        recipt_order(update.effective_chat.id, 'request')
         ids = get_order_ids(update.effective_chat.id)
         sum = get_order_sum(update.effective_chat.id)
         await remove_buttons(update, context)
         await yes(ids, sum, update, context)
-
-
-
 
     #Если ппользователь оттказывается от заказа
     if callback_data == "no":
@@ -61,6 +58,7 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
         o.state('await_recipt', order_id)
         u.state('await_recipt', update.effective_chat.id)
         o.status('active', order_id)
+        o.set_time(order_id)
 
         await apply_order(update, context)
 
@@ -153,19 +151,6 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
 
         # Удалить кнопки после обработки
         await remove_buttons(update, context)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -39,7 +39,7 @@ class Order:
             conn.rollback()
             print("Error:", e)
             return "Error"
-        
+
     def get_sum(self, ids):
         query = f"SELECT sum FROM orders WHERE ids = '{ids}'"
         try:
@@ -107,6 +107,21 @@ class Order:
             cur.execute(query)
             conn.commit()
             print("Статус заказа изменен на: ", status)
+            return True
+        except Exception as e:
+            conn.rollback()
+            print("Error:", e)
+            return False
+
+    def set_time(self, ids: str) -> bool:
+        'Обновляем state заказа'
+        date = datetime.datetime.now()
+        query = f"UPDATE orders SET date = '{date}' WHERE ids = '{ids}'"
+        print(query)
+        try:
+            cur.execute(query)
+            conn.commit()
+            print("Время заказа изменен на: ", date)
             return True
         except Exception as e:
             conn.rollback()

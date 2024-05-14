@@ -43,7 +43,7 @@ class Admin():
             resize_keyboard=True)
 
     def orders(self):
-        return ReplyKeyboardMarkup([['В работе'], ['Заявки'], ['Выполненые', 'Отмененные'], ['Все заказы'], ['Главное меню']], resize_keyboard=True)
+        return ReplyKeyboardMarkup([['В работе'], ['Заявки'], ['Выполненые', 'Отмененные'], ['Главное меню']], resize_keyboard=True)
 
     def course(self):
         return ReplyKeyboardMarkup([['Узнать курс'], ['Изменить курс'], ['Главное меню']], resize_keyboard=True)

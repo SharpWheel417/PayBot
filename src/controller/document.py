@@ -18,7 +18,7 @@ async def handle_document(update: Update, context: CallbackContext):
     if order is None:
         await error_mess("У вас нет активных заказов", update, context)
         return
-    
+
     if order['timechk'] == "cancle":
         await error_mess("Вы не успели отправить квитанцию, создайте новый заказ", update, context)
         return
@@ -53,3 +53,5 @@ async def handle_document(update: Update, context: CallbackContext):
 
         # Отправить сообщение о том, что файл был отправлен
         update.message.reply_text(f'Файл был отправлен пользователю')
+
+        o.set_timechk('complete', order['ids'])

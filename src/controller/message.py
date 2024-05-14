@@ -51,7 +51,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         await came_email(update, context)
             except Exception as e:
                 await error_mess("Вы должны отправить email и ссылку одинм сообщением", update, context)
-                
+
 
         ########################
 
@@ -60,6 +60,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ### Пользователь ввел сумму
         ###
         else:
+            ##Проверяем, есть ли у пользователя активный заказ
             check = order.check(update.effective_chat.id)
             if not check:
                 usd = float(v.usd())
@@ -71,7 +72,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
                 ## Вычисляем прибыль
                 profit = round((result - summ),2)
-                ##Проверяем, есть ли у пользователя активный заказ
                 if order.set(result, usd, profit, marje,  update.effective_user.username, update.effective_chat.id, "query"):
                     await vOrder(result, update, context)
 

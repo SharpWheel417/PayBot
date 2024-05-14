@@ -1,5 +1,20 @@
 -- Adminer 4.8.1 PostgreSQL 16.1 (Debian 16.1-1.pgdg120+1) dump
 
+DROP TABLE IF EXISTS "admins";
+DROP SEQUENCE IF EXISTS admin_id_seq;
+CREATE SEQUENCE admin_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
+
+CREATE TABLE "public"."admins" (
+    "id" integer DEFAULT nextval('admin_id_seq') NOT NULL,
+    "chat_id" text NOT NULL,
+    CONSTRAINT "admin_pkey" PRIMARY KEY ("id")
+) WITH (oids = false);
+
+INSERT INTO "admins" ("id", "chat_id") VALUES
+(1,	'-4181748266'),
+(2,	'1194700554'),
+(3,	'611660794');
+
 DROP TABLE IF EXISTS "data";
 DROP SEQUENCE IF EXISTS data_id_seq;
 CREATE SEQUENCE data_id_seq INCREMENT 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1;
@@ -138,4 +153,4 @@ INSERT INTO "vars" ("id", "type", "text") VALUES
 (5,	'marje                                                                                               ',	'1.12'),
 (1,	'course_usd                                                                                          ',	'145.0');
 
--- 2024-05-14 10:15:33.374708+00
+-- 2024-05-14 11:21:22.344665+00

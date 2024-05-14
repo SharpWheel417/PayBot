@@ -38,7 +38,7 @@ class Admin():
 
     def admin_buttons(self):
         return ReplyKeyboardMarkup(
-            [['Заказы'], ['Курс', 'Маржа', 'Переменные'], ['Калькулятор', 'Статистика']],
+            [['Заказы'], ['Курс', 'Маржа', 'Переменные'], ['Калькулятор', 'Статистика', 'Админы']],
             resize_keyboard=True)
 
     def orders(self):
@@ -58,5 +58,8 @@ class Admin():
 
     def stats(self):
         return ReplyKeyboardMarkup([['Пользователи'],['Кол-во выполненых заказов'], ['Выручка'], ['Главное меню']], resize_keyboard=True)
+
+    def admins(self):
+        return ReplyKeyboardMarkup([['Список админов'],['Добавить админа', 'Удалить админа'], ['Главное меню']], resize_keyboard=True)
 
 admin = Admin()

@@ -130,4 +130,37 @@ class Stats():
   async def profit(self, summ, update: Update, context: ContextTypes.DEFAULT_TYPE):
       await context.bot.send_message(chat_id=update.effective_chat.id, text="Выручка: "+str(summ)+" руб.")
 
+
+
+
+  async def admins(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await context.bot.send_message(chat_id=update.effective_chat.id, text="Админы: ", reply_markup=admin.admins())
+
+  async def all_admins(self, admins, update: Update, context: ContextTypes.DEFAULT_TYPE):
+    messages = []
+    message = "Список админов:\n"
+    for row in admins:
+        idd = str(row[0]).replace(' ', '')
+        chat_id = str(row[1])
+        message += f"{idd} :: ||{chat_id}||\n"
+        if len(message) > 3000:  # Пример максимальной длины сообщения
+            messages.append(message)
+            message = "Список админов (продолжение):\n"
+    # Добавить последнее сообщение, если оно не пустое
+    if message:
+        messages.append(message)
+    # Отправить сообщения в телеграмм
+    for msg in messages:
+        await context.bot.send_message(chat_id=update.effective_chat.id, text=msg)
+
+  async def add_admin(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await context.bot.send_message(chat_id=update.effective_chat.id, text="Введите chat id админа: ")
+
+
+  async def added_admin(self, text, update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await context.bot.send_message(chat_id=update.effective_chat.id, text="Админ добавлен: "+str(text)+"")
+
+  async def deleted_admin(self, text, update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await context.bot.send_message(chat_id=update.effective_chat.id, text="Админ удален: "+str(text)+"")
+
 stats = Stats()

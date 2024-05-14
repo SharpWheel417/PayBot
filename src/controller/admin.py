@@ -6,6 +6,7 @@ from src.model.stats import stats as dbStats
 from src.model.order import order
 from src.model.user import user
 from src.model.variables import v
+from src.model.admins import a
 
 
 async def admin_way(text, update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -179,3 +180,39 @@ async def admin_way(text, update: Update, context: ContextTypes.DEFAULT_TYPE):
   if text == 'Выручка':
     profit = dbStats.all_money()
     await stats.profit(profit, update, context)
+
+
+
+  if text == 'Админы':
+    await stats.admins(update, context)
+
+  if text == 'Список админов':
+    admins = a.get()
+    await stats.all_admins(admins, update, context)
+
+
+
+
+### ДОБАВЛЕНИЕ АДМИНА ###
+  if user.get_state(update.effective_chat.id) == 'add_admin':
+    a.add(text)
+    user.state('', update.effective_chat.id)
+    await stats.added_admin(text, update, context)
+
+  if text == 'Добавить админа':
+    user.state('add_admin', update.effective_chat.id)
+    await stats.add_admin(update, context)
+##############################
+
+
+
+### Удаление АДМИНА ###
+  if user.get_state(update.effective_chat.id) == 'delete_admin':
+    a.delete(text)
+    user.state('', update.effective_chat.id)
+    await stats.deleted_admin(text, update, context)
+
+  if text == 'Удалить админа':
+    user.state('delete_admin', update.effective_chat.id)
+    await stats.add_admin(update, context)
+##############################

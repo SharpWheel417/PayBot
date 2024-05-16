@@ -41,19 +41,19 @@ scheduler_thread.start()
 def time_check():
     orders = order.get_timechk()
 
+    if orders is not None:
+        for o in orders:
 
-    for o in orders:
+            date_str = o[1].strftime("%Y-%m-%d %H:%M:%S")
+            date_obj = datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
 
-      date_str = o[1].strftime("%Y-%m-%d %H:%M:%S")
-      date_obj = datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
+            updated_date = date_obj + timedelta(minutes=15)
 
-      updated_date = date_obj + timedelta(minutes=15)
-
-      if datetime.now() >= updated_date:
-         order.set_timechk('cancle', o[0])
-         id = order.chat_id(o[0])
-         #Делаем заказ cancle
-         order.status('cancle', o[0])
-         sendmess_id(id, 'Заказ отменен, вы не успели отправить квитанцию')
-         for i in ADMIN:
-          sendmess_id(i, f"Заказ {o[0]} отменен\nПользователь не успел отправить квитанцию в течении 10 минут")
+            if datetime.now() >= updated_date:
+                order.set_timechk('cancle', o[0])
+                id = order.chat_id(o[0])
+                #Делаем заказ cancle
+                order.status('cancle', o[0])
+                sendmess_id(id, 'Заказ отменен, вы не успели отправить квитанцию')
+                for i in ADMIN:
+                    sendmess_id(i, f"Заказ {o[0]} отменен\nПользователь не успел отправить квитанцию в течении 10 минут")

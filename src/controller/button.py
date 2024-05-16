@@ -99,9 +99,9 @@ async def button_callback(update: Update, context: CallbackContext, *args, **kwa
         ##Отмена квитанции
     if callback_data == "cancle_recipt":
         ##Название файла
-        file_name = query.message.document.file_name
-        ## IDS заказа
-        ids = file_name.split(".pdf")[0]
+        text = query.message.text
+        ids = re.search(pattern, text).group()
+        ids = ids.replace("ID заказа: ", "")
         if o.state('cancle_recipt', ids):
             o.status('cancle', ids)
             chat_id = o.chat_id(ids)

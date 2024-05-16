@@ -321,7 +321,7 @@ def close_order(chat_id: str):
 def recipt_order(ids: str, status: str):
     'Обновляем заказ в БД'
 
-    query = f"UPDATE orders SET state = 'request', status='{status}' WHERE chat_id = '{ids}', state = 'query'"
+    query = f"UPDATE orders SET state = 'request', status='{status}' WHERE chat_id = '{ids}' AND state = 'query'"
     print(query)
     try:
         cur.execute(query)

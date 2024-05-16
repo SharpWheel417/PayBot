@@ -61,23 +61,24 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ###
         else:
             txt = text.replace('$', '')
-            ##Проверяем, есть ли у пользователя активный заказ
-            check = order.check(update.effective_chat.id)
-            if not check:
-                usd = float(v.usd())
-                marje = float(v.marje())
-                ## Переводим доллары в рубли
-                summ = round((int(txt) * usd),2)
-                ## Плюсуем маржу
-                result = round((summ*marje),2)
+            if txt.isdigit():
+                ##Проверяем, есть ли у пользователя активный заказ
+                check = order.check(update.effective_chat.id)
+                if not check:
+                    usd = float(v.usd())
+                    marje = float(v.marje())
+                    ## Переводим доллары в рубли
+                    summ = round((int(txt) * usd),2)
+                    ## Плюсуем маржу
+                    result = round((summ*marje),2)
 
-                ## Вычисляем прибыль
-                profit = round((result - summ),2)
-                if order.set(result, usd, profit, marje,  update.effective_user.username, update.effective_chat.id, "query"):
-                    await vOrder(result, update, context)
+                    ## Вычисляем прибыль
+                    profit = round((result - summ),2)
+                    if order.set(result, usd, profit, marje,  update.effective_user.username, update.effective_chat.id, "query"):
+                        await vOrder(result, update, context)
 
-            else:
-                o = order.get_active(update.message.chat_id)
-                await have_order(o, update, context)
+                else:
+                    o = order.get_active(update.message.chat_id)
+                    await have_order(o, update, context)
 
         ######################

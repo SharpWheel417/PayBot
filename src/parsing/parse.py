@@ -8,7 +8,7 @@ from src.model.variables import v
 
 def parsing():
     course = get_currency()
-    if course != 'Error':
+    if course != 'error':
         v.set_usd(course)
         sendmess("Курс взят: "+str(course)+"")
         print("Курс установлен: ", course)

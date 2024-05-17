@@ -260,7 +260,7 @@ order = Order()
 def get_order_ids( chat_id: str) -> str:
     'Берем заказ из БД'
 
-    query = f"SELECT ids FROM orders WHERE chat_id = '{chat_id}' AND state = 'query'"
+    query = f"SELECT ids FROM orders WHERE chat_id = '{chat_id}' AND state = 'request'"
     print(query)
     try:
         # Вставьте текущую дату в таблицу "order"
